@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UI_Manager : MonoBehaviour
 {
+
+    [Seria]
     // Start is called before the first frame update
     void Start()
     {
