@@ -27,7 +27,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         inputMov = Input.GetAxisRaw("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space)) { Jump(); }
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            Jump();
+        }
 
         inGround = Physics2D.OverlapCircle(checker.position, radiusChecker, layerMaskGround);
     }
@@ -37,6 +40,9 @@ public class Player : MonoBehaviour
     }
     void Jump()
     {
-        if (inGround){ rigidbody_.AddForce(new Vector2(0, speed * jumpForce)); }
+        if (inGround)
+        {
+            rigidbody_.AddForce(new Vector2(0, speed * jumpForce));
+        }
     }
 }
