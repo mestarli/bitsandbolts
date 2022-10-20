@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
@@ -10,11 +11,13 @@ public class Player : MonoBehaviour
     public float speed;
     public float jumpForce;
     public float gravityScale;
+    float lastPosition=0;
 
     Transform checker;
     public float radiusChecker;
     public LayerMask layerMaskGround;
-    public bool inGround;
+    bool inGround;
+    bool goingUp;
 
     // Start is called before the first frame update
     private void Awake()
@@ -26,13 +29,29 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inputMov = Input.GetAxisRaw("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (lastPosition < transform.position.y)
         {
+            goingUp=true;
+        }
+        else
+        {
+            goingUp = false;
+        }
+        inputMov = Input.GetAxisRaw("Horizontal");
+        if (Input.GetKeyDown(KeyCode.Space) && inGround) 
+        {
+            inGround = false;
             Jump();
         }
-
+   
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            StopJump();
+        }
+        
         inGround = Physics2D.OverlapCircle(checker.position, radiusChecker, layerMaskGround);
+
+        lastPosition = transform.position.y;
     }
     private void FixedUpdate()
     {
@@ -40,9 +59,14 @@ public class Player : MonoBehaviour
     }
     void Jump()
     {
-        if (inGround)
+        rigidbody_.AddForce(new Vector2(0, speed * jumpForce));
+       
+    }
+    void StopJump()
+    {
+        if (goingUp && !inGround)
         {
-            rigidbody_.AddForce(new Vector2(0, speed * jumpForce));
+            rigidbody_.velocity = new Vector2(rigidbody_.velocity.x, rigidbody_.velocity.y/1.5f);
         }
     }
 }
