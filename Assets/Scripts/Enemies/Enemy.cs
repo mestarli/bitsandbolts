@@ -19,4 +19,9 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        //player daño
+    }
 }

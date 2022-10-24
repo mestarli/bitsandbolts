@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
             Jump();
         }
    
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (!Input.GetKey(KeyCode.Space))
         {
             StopJump();
         }
