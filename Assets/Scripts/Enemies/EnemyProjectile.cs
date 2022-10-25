@@ -28,7 +28,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (collision.GetComponent<Player>())
         {
-            //insertar logica de recibir daño
+            collision.GetComponent<Player>().TakeDamage();
             Destroy(gameObject);
         }
         else if (!ignoresWalls && collision.gameObject.CompareTag("Floor"))

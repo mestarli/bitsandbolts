@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void TakeDamage()
+    public void TakeDamage()
     {
         life -= 1;
         UIGame.instance.UpdateLife(life);

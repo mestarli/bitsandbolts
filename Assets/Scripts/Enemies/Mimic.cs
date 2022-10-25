@@ -30,6 +30,7 @@ public class Mimic : Enemy
     {
         if (collision.gameObject.GetComponent<Player>()&&rigidbody2D_.gravityScale==0)
         {
+            collision.GetComponent<Player>().TakeDamage();
             rigidbody2D_.gravityScale = 1;
             Jump();
         }

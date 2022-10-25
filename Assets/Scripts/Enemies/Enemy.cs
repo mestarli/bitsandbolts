@@ -22,6 +22,9 @@ public class Enemy : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        //player daño
+        if (collision.GetComponent<Player>())
+        {
+            collision.GetComponent<Player>().TakeDamage();
+        }
     }
 }
