@@ -9,6 +9,7 @@ public class Spider : Enemy
     public float horizontalSpeed;
     public float verticalSpeed;
     public LayerMask floor;
+    bool onGround;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class Spider : Enemy
             rigidbody2D_.gravityScale = 1;
             transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
         }
-        if(rigidbody2D_.gravityScale !=0 && version ==2)
+        if (rigidbody2D_.gravityScale != 0 && version == 2 && onGround;)
         {
             rigidbody2D_.velocity = dir.normalized*transform.right * horizontalSpeed/80;
         }
@@ -47,9 +48,16 @@ public class Spider : Enemy
     public override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
-        if (collision.gameObject.CompareTag("Floor") && rigidbody2D_.gravityScale != 0 && version == 1)
+        if (collision.gameObject.CompareTag("Floor") && rigidbody2D_.gravityScale != 0)
         {
-            Jump();
+            if (version == 1)
+            {
+                Jump();
+            }
+            else if (version == 2)
+            {
+                onGround = true;
+            }
         }
     }
 }
