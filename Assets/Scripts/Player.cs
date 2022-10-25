@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 public class Player : MonoBehaviour
 {
@@ -19,6 +22,11 @@ public class Player : MonoBehaviour
     bool inGround;
     bool goingUp;
 
+    [SerializeField] private int life = 3;
+    [SerializeField] private GameObject ContentWeapon;
+    [SerializeField] private GameObject ActiveWeapon;
+    
+    [SerializeField] private int positionActiveWeapon = 0;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -52,6 +60,37 @@ public class Player : MonoBehaviour
         inGround = Physics2D.OverlapCircle(checker.position, radiusChecker, layerMaskGround);
 
         lastPosition = transform.position.y;
+        
+        // For example of rest life
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            TakeDamage();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            SceneManager.LoadScene("OscarScene");
+        }
+        
+        //Press g for change weapon
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            ContentWeapon.transform.GetChild(positionActiveWeapon).gameObject.SetActive(false);
+            if (positionActiveWeapon < 2)
+            {
+                positionActiveWeapon += 1;
+            }
+            else
+            {
+                positionActiveWeapon = 0;
+            }
+           
+            ContentWeapon.transform.GetChild(positionActiveWeapon).gameObject.SetActive(true);
+
+            Debug.Log("Posicion "+positionActiveWeapon);
+            UIGame.instance.UpdateWeapon(positionActiveWeapon);
+        }
+        
     }
     private void FixedUpdate()
     {
@@ -67,6 +106,18 @@ public class Player : MonoBehaviour
         if (goingUp && !inGround)
         {
             rigidbody_.velocity = new Vector2(rigidbody_.velocity.x, rigidbody_.velocity.y/1.5f);
+        }
+    }
+
+    void TakeDamage()
+    {
+        life -= 1;
+        UIGame.instance.UpdateLife(life);
+        if(life <= 0)
+        {
+            Debug.Log("You are Dead");
+            //Logica para morir
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
