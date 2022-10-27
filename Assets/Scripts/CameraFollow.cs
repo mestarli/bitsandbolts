@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public float upMaxDistance;
-    public float downMaxDistance;
     Player player;
     public float cameraSpeed;
 
@@ -18,7 +17,7 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         float dist = player.transform.position.y - transform.position.y;
-        if(dist > upMaxDistance  || dist < -downMaxDistance)
+        if(dist > upMaxDistance)
         {
             transform.Translate(transform.up * cameraSpeed *dist* Time.deltaTime);
         }
