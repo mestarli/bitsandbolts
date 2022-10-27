@@ -26,7 +26,7 @@ public class Spider : Enemy
             rigidbody2D_.gravityScale = 1;
             transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
         }
-        if (rigidbody2D_.gravityScale != 0 && version == 2 && onGround;)
+        if (rigidbody2D_.gravityScale != 0 && version == 2 && onGround)
         {
             rigidbody2D_.velocity = dir.normalized*transform.right * horizontalSpeed/80;
         }
