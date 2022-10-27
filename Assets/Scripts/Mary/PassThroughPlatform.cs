@@ -24,7 +24,7 @@ public class PassThroughPlatform : MonoBehaviour
 
     private IEnumerator EnableCollider()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         _collider.enabled = true;
     }
 
@@ -33,6 +33,7 @@ public class PassThroughPlatform : MonoBehaviour
         var player = other.gameObject.GetComponent<Player>();
         if (player != null)
         {
+            _collider = other.gameObject.GetComponent<Player>().gameObject.GetComponent<Collider2D>();
             _playerOnPlatform = value;
         }
     }
