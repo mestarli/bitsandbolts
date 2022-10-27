@@ -6,17 +6,20 @@ public class Enemy : MonoBehaviour
 {
     public int hp;
     public int version;
+    public GameObject explosion;
     public virtual void TakeDmg(int dmg)
     {
         hp -= dmg;
         if (hp <= 0)
         {
+            
             Die();
         }
     }
 
     public virtual void Die()
     {
+        Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 

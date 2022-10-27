@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   version: 2
+  explosion: {fileID: 1274395479995899951, guid: 1c48d6a5c9b84d94db84f4181835a899, type: 3}
   range: 10
   speed: 1
   minDistance: 2

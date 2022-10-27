@@ -9,6 +9,8 @@ using Debug = UnityEngine.Debug;
 
 public class Player : MonoBehaviour
 {
+    public GameObject particlesJump;
+
     float inputMov;
     Rigidbody2D rigidbody_;
     public float speed;
@@ -98,7 +100,8 @@ public class Player : MonoBehaviour
     }
     void Jump()
     {
-        rigidbody_.AddForce(new Vector2(0, speed * jumpForce));
+        Instantiate(particlesJump, transform.position, transform.rotation);
+        rigidbody_.AddForce(new Vector2(0, jumpForce));
        
     }
     void StopJump()
@@ -116,8 +119,12 @@ public class Player : MonoBehaviour
         if(life <= 0)
         {
             Debug.Log("You are Dead");
-            //Logica para morir
-            SceneManager.LoadScene("GameOver");
+            
         }
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }
