@@ -11,7 +11,10 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject panel_modeler;
     
     // Guardamos los valores en 1 o 2, para las diferentes opciones elegidas
-    [SerializeField] private int developerSelection = 0;
+    [SerializeField] private int phantomVersion = 0;
+    [SerializeField] private int spiderVersion = 0;
+    [SerializeField] private int skeletonVersion = 0;
+    [SerializeField] private int batVersion = 0;
     [SerializeField] private int textureSelection = 0;
     [SerializeField] private int animationSelection = 0;
     [SerializeField] private int modelerSelection = 0;
@@ -103,7 +106,19 @@ public class UI_Manager : MonoBehaviour
         {
             case 1:
                 Debug.Log("Has elegido las opciones de programacion");
-                developerSelection = selection;
+                phantomVersion = selection;
+                break;
+            case 5:
+                Debug.Log("Has elegido las opciones de programacion");
+                spiderVersion = selection;
+                break;
+            case 6:
+                Debug.Log("Has elegido las opciones de programacion");
+                skeletonVersion = selection;
+                break;
+            case 7:
+                Debug.Log("Has elegido las opciones de programacion");
+                batVersion = selection;
                 break;
             case 2:
                 Debug.Log("Has elegido las opciones de modelado");
@@ -118,7 +133,10 @@ public class UI_Manager : MonoBehaviour
                 animationSelection = selection;
                 break;
             default:
-                developerSelection = 1;
+                skeletonVersion= 1;
+                batVersion= 1;
+                spiderVersion= 1;
+                phantomVersion= 1;
                 textureSelection = 1;
                 animationSelection = 1;
                 modelerSelection = 1;
