@@ -7,6 +7,12 @@ public class Enemy : MonoBehaviour
     public int hp;
     public int version;
     public GameObject explosion;
+    public UI_Manager uImanager;
+    private void Awake()
+    {
+
+        uImanager = FindObjectOfType<UI_Manager>();
+    }
     public virtual void TakeDmg(int dmg)
     {
         hp -= dmg;

@@ -13,8 +13,10 @@ public class Spider : Enemy
     // Start is called before the first frame update
     private void Awake()
     {
+
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
+        version = uImanager.InstanceUI().SpiderVersion();
     }
 
     // Update is called once per frame
@@ -28,15 +30,15 @@ public class Spider : Enemy
         }
         if (rigidbody2D_.gravityScale != 0 && version == 2 && onGround)
         {
-            rigidbody2D_.velocity = dir.normalized*transform.right * horizontalSpeed/80;
+            rigidbody2D_.velocity = new Vector2( dir.normalized.x * horizontalSpeed/55, rigidbody2D_.velocity.y);
         }
     }
     void Jump()
     {
         rigidbody2D_.velocity = new Vector2(0, 0);
         Vector2 direction = player.transform.position - transform.position;
-        int coin = Random.Range(0, 2);
-        if (coin == 0)
+        int coin = Random.Range(0, 5);
+        if (coin <= 3)
         {
             rigidbody2D_.AddForce(new Vector2(direction.normalized.x * horizontalSpeed, verticalSpeed));
         }

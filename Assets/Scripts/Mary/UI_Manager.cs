@@ -21,13 +21,38 @@ public class UI_Manager : MonoBehaviour
 
     private static UI_Manager Instance;
     private int selection = 0;
-    
+
+    public UI_Manager InstanceUI()
+    {
+        return Instance;
+    }
+    public int PhantomVersion()
+    {
+        return phantomVersion;
+    }
+    public int BatVersion()
+    {
+        return batVersion;
+    }
+    public int SkeletonVersion()
+    {
+        return skeletonVersion;
+    }
+    public int SpiderVersion()
+    {
+        return spiderVersion;
+    }
+
+
     void Awake()
     {
-        panel_developer.SetActive(true);
-        panel_modeler.SetActive(false);
-        panel_texture.SetActive(false);
-        panel_animation.SetActive(false);
+        if (panel_developer != null)
+        {
+            panel_developer.SetActive(true);
+            panel_modeler.SetActive(false);
+            panel_texture.SetActive(false);
+            panel_animation.SetActive(false);
+        }
     }
     
 

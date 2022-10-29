@@ -14,6 +14,7 @@ public class Bat : Enemy
     private void Awake()
     {
         rigidbody2D_ = GetComponent<Rigidbody2D>();
+        version = uImanager.InstanceUI().BatVersion();
     }
     private void Start()
     {
