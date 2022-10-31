@@ -33,7 +33,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.GetComponent<Player>())
         {
-            collision.GetComponent<Player>().TakeDamage();
+            Vector2 dir = transform.position - collision.transform.position;
+            collision.GetComponent<Player>().TakeDamage(dir);
         }
     }
 }

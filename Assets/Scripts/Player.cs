@@ -23,6 +23,10 @@ public class Player : MonoBehaviour
     public LayerMask layerMaskGround;
     bool inGround;
     bool goingUp;
+    float knockback;
+    public float knockbackHorizontalForce = 2;
+    public float knockbackVerticalForce;
+    public float tenacity = 6;
 
     [SerializeField] private int life = 3;
     [SerializeField] private GameObject ContentWeapon;
@@ -39,6 +43,21 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(knockback != 0)
+        {
+            if (knockback > 0)
+            {
+                knockback -= Time.deltaTime * tenacity;
+            }
+            else
+            {
+                knockback += Time.deltaTime * tenacity;
+            }
+            if(knockback<0.2f && knockback > -0.2f)
+            {
+                knockback = 0;
+            }
+        }
         if (lastPosition < transform.position.y)
         {
             goingUp=true;
@@ -47,7 +66,14 @@ public class Player : MonoBehaviour
         {
             goingUp = false;
         }
-        inputMov = Input.GetAxisRaw("Horizontal");
+        if (knockback == 0)
+        {
+            inputMov = Input.GetAxisRaw("Horizontal");
+        }
+        else
+        {
+            inputMov = 0;
+        }
         if (Input.GetKeyDown(KeyCode.Space) && inGround) 
         {
             inGround = false;
@@ -63,11 +89,6 @@ public class Player : MonoBehaviour
 
         lastPosition = transform.position.y;
         
-        // For example of rest life
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            TakeDamage();
-        }
         
         if (Input.GetKeyDown(KeyCode.U))
         {
@@ -96,7 +117,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rigidbody_.velocity = new Vector2(speed *inputMov,rigidbody_.velocity.y);
+        rigidbody_.velocity = new Vector2(speed *(inputMov+knockback),rigidbody_.velocity.y);
     }
     void Jump()
     {
@@ -112,14 +133,26 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeDamage()
+    public void TakeDamage(Vector2 dir)
     {
-        life -= 1;
-        UIGame.instance.UpdateLife(life);
-        if(life <= 0)
+        if (knockback == 0)
         {
-            Debug.Log("You are Dead");
-            
+            if (dir.x > 0)
+            {
+                knockback = -knockbackHorizontalForce;
+            }
+            else
+            {
+                knockback = knockbackHorizontalForce;
+            }
+            life -= 1;
+            UIGame.instance.UpdateLife(life);
+            if (life <= 0)
+            {
+                Die();
+
+            }
+            rigidbody_.AddForce(transform.up * knockbackVerticalForce);
         }
     }
 
