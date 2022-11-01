@@ -18,13 +18,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Floor
+  - Background
   - Water
   - UI
   - Enemy
   - Player
-  - 
-  - 
+  - Level
+  - Floor
   - 
   - 
   - 
@@ -50,4 +50,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Level
+    uniqueID: 80878691
+    locked: 0
+  - name: UI
+    uniqueID: 3269085551
     locked: 0

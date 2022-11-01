@@ -196,7 +196,7 @@ public class UI_Manager : MonoBehaviour
             case 4:
                 Debug.Log("Has elegido las opciones de animacion");
                 animationSelection = selection;
-                SceneManager.LoadScene("OscarScene");
+                SceneManager.LoadScene("Level_01");
                 break;
             default:
                 skeletonVersion= 1;

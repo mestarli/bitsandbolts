@@ -149,13 +149,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcf1be441403c343bfa93ba6876c03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpForce: 100
+  particlesJump: {fileID: 4246907989980071804, guid: 959f93be7471ace4380516b65d446de0, type: 3}
+  speed: 5
+  jumpForce: 1200
   gravityScale: -89
   radiusChecker: 0.5
   layerMaskGround:
     serializedVersion: 2
     m_Bits: 8
+  knockbackHorizontalForce: 2
+  knockbackVerticalForce: 300
+  tenacity: 6
   life: 3
   ContentWeapon: {fileID: 1306270827160854272}
   ActiveWeapon: {fileID: 0}
