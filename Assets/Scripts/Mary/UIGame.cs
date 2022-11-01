@@ -44,7 +44,8 @@ public class UIGame : MonoBehaviour
 
    public void UpdateLife(int heartPosition)
    {
-       Life[heartPosition].GetComponent<SpriteRenderer>().color = new Color(150, 133, 133);
+       Life[heartPosition].transform.GetChild(0).gameObject.SetActive(false);
+       Life[heartPosition].transform.GetChild(1).gameObject.SetActive(true);
    }
 
     public void UpdateWeapon(int weaponPosition)

@@ -156,7 +156,7 @@ MonoBehaviour:
   radiusChecker: 0.5
   layerMaskGround:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 512
   knockbackHorizontalForce: 2
   knockbackVerticalForce: 300
   tenacity: 6
