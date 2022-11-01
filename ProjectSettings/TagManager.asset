@@ -8,6 +8,12 @@ TagManager:
   - option_02
   - select_option
   - Floor
+  - option_03
+  - option_04
+  - option_05
+  - option_06
+  - option_07
+  - option_08
   layers:
   - Default
   - TransparentFX

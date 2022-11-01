@@ -16,7 +16,7 @@ public class Skeleton : Enemy
     {
         player = FindObjectOfType<Player>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
-        version = uImanager.InstanceUI().SkeletonVersion();
+        version = UI_Manager.Instance.SkeletonVersion();
     }
     void Start()
     {

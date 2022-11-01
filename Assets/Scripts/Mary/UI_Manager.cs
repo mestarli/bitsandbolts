@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -18,14 +19,10 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private int textureSelection = 0;
     [SerializeField] private int animationSelection = 0;
     [SerializeField] private int modelerSelection = 0;
-
-    private static UI_Manager Instance;
+    
+    public static UI_Manager  Instance { get; private set; }
     private int selection = 0;
-
-    public UI_Manager InstanceUI()
-    {
-        return Instance;
-    }
+    
     public int PhantomVersion()
     {
         return phantomVersion;
@@ -42,6 +39,10 @@ public class UI_Manager : MonoBehaviour
     {
         return spiderVersion;
     }
+    public int TextureVersion()
+    {
+        return textureSelection;
+    }
 
 
     void Awake()
@@ -53,6 +54,14 @@ public class UI_Manager : MonoBehaviour
             panel_texture.SetActive(false);
             panel_animation.SetActive(false);
         }
+        if (Instance != null && Instance != this) 
+        { 
+            Destroy(this); 
+        } 
+        else 
+        { 
+            Instance = this; 
+        } 
     }
     
 
@@ -71,12 +80,43 @@ public class UI_Manager : MonoBehaviour
                 if (GameObject.FindWithTag("option_01") != null)
                 {
                     selection = 1;
+                    AddOptionSelected(level,selection);
                 }
                 if (GameObject.FindWithTag("option_02") != null)
                 {
                     selection = 2;
+                    AddOptionSelected(level,selection);
                 }
-                AddOptionSelected(level,selection);
+                if (GameObject.FindWithTag("option_03") != null)
+                {
+                    selection = 1;
+                    AddOptionSelected(6,selection);
+                }
+                if (GameObject.FindWithTag("option_04") != null)
+                {
+                    selection = 2;
+                    AddOptionSelected(6,selection);
+                }
+                if (GameObject.FindWithTag("option_05") != null)
+                {
+                    selection = 1;
+                    AddOptionSelected(7,selection);
+                }
+                if (GameObject.FindWithTag("option_06") != null)
+                {
+                    selection = 2;
+                    AddOptionSelected(7,selection);
+                }
+                if (GameObject.FindWithTag("option_07") != null)
+                {
+                    selection = 1;
+                    AddOptionSelected(5,selection);
+                }
+                if (GameObject.FindWithTag("option_08") != null)
+                {
+                    selection = 2;
+                    AddOptionSelected(5,selection);
+                }
                 panel_developer.SetActive(false);
                 panel_modeler.SetActive(true);
                 break;
@@ -130,19 +170,19 @@ public class UI_Manager : MonoBehaviour
         switch (level)
         {
             case 1:
-                Debug.Log("Has elegido las opciones de programacion");
+                Debug.Log("Has elegido la version del fantasma");
                 phantomVersion = selection;
                 break;
             case 5:
-                Debug.Log("Has elegido las opciones de programacion");
+                Debug.Log("Has elegido la version de spider");
                 spiderVersion = selection;
                 break;
             case 6:
-                Debug.Log("Has elegido las opciones de programacion");
+                Debug.Log("Has elegido la version de skeleton");
                 skeletonVersion = selection;
                 break;
             case 7:
-                Debug.Log("Has elegido las opciones de programacion");
+                Debug.Log("Has elegido la version de batman");
                 batVersion = selection;
                 break;
             case 2:
@@ -156,6 +196,7 @@ public class UI_Manager : MonoBehaviour
             case 4:
                 Debug.Log("Has elegido las opciones de animacion");
                 animationSelection = selection;
+                SceneManager.LoadScene("OscarScene");
                 break;
             default:
                 skeletonVersion= 1;

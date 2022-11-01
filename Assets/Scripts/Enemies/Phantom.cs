@@ -17,7 +17,7 @@ public class Phantom : Enemy
     {
         player = FindObjectOfType<Player>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
-        version = uImanager.InstanceUI().PhantomVersion();
+        version = UI_Manager.Instance.PhantomVersion();
     }
     private void Start()
     {
@@ -69,7 +69,7 @@ public class Phantom : Enemy
     {
         if (collision.gameObject.GetComponent<Player>() && version == 2 && !teleporting)
         {
-            //daño jeje
+            //daï¿½o jeje
         }
     }
 
