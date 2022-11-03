@@ -28,16 +28,29 @@ public class Player : MonoBehaviour
     public float knockbackVerticalForce;
     public float tenacity = 6;
 
+    private bool facingRight = true;
+    
     [SerializeField] private int life = 3;
     [SerializeField] private GameObject ContentWeapon;
     [SerializeField] private GameObject ActiveWeapon;
     
     [SerializeField] private int positionActiveWeapon = 0;
+    
+    [SerializeField]private Vector2 initialPositionWeapons;
+    [SerializeField]private Vector2 topPositionWeapons;
+    
+    public bool canAttack;
+
+    [SerializeField] private bool topAttack;
     // Start is called before the first frame update
     private void Awake()
     {
         rigidbody_ = GetComponent<Rigidbody2D>();
         checker = transform.GetChild(0);
+        initialPositionWeapons = new Vector2(0,0);
+        topPositionWeapons = new Vector2(-0.49f,0.58f);
+        canAttack = true;
+        topAttack = false;
     }
 
     // Update is called once per frame
@@ -96,7 +109,7 @@ public class Player : MonoBehaviour
         }
         
         //Press g for change weapon
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.Q) && canAttack)
         {
             ContentWeapon.transform.GetChild(positionActiveWeapon).gameObject.SetActive(false);
             if (positionActiveWeapon < 2)
@@ -112,6 +125,40 @@ public class Player : MonoBehaviour
 
             Debug.Log("Posicion "+positionActiveWeapon);
             UIGame.instance.UpdateWeapon(positionActiveWeapon);
+        }
+
+        if (Input.GetKeyDown(KeyCode.W) && canAttack)
+        {
+            //topAttack = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.W) && canAttack)
+        {
+            //topAttack = false;
+        }
+
+        if(positionActiveWeapon!=1 &&  topAttack && Input.GetMouseButtonDown(0) && canAttack)
+        {
+            canAttack = false;
+            ContentWeapon.transform.localPosition = topPositionWeapons;
+            ContentWeapon.transform.GetChild(positionActiveWeapon).GetComponent<Weapon>().WeaponAttack();
+        }
+        if(!topAttack && Input.GetMouseButtonDown(0) && canAttack)
+        {
+            canAttack = false;
+            ContentWeapon.transform.GetChild(positionActiveWeapon).GetComponent<Weapon>().WeaponAttack();
+        }
+
+        
+        
+        // For flip player
+        if (inputMov > 0 && !facingRight)
+        {
+            Flip();
+        }
+        if (inputMov < 0 && facingRight)
+        {
+            Flip();
         }
         
     }
@@ -160,4 +207,13 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");
     }
+
+    void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+        facingRight = !facingRight;
+    }
+    
 }
