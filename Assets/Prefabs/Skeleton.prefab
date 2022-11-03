@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7589704350300899047}
   - component: {fileID: 7589704350300899044}
   - component: {fileID: 7589704350300899046}
-  - component: {fileID: 939961635761318790}
   - component: {fileID: 2287115024544738514}
   - component: {fileID: 1481482607746764644}
+  - component: {fileID: 3214710735081489630}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -108,32 +108,6 @@ MonoBehaviour:
   player: {fileID: 0}
   boneProjectile: {fileID: 4347772535610534648, guid: 1a43ed4b46d85dd4291ee227ad768922, type: 3}
   skull: {fileID: 7662054622041673520, guid: f13baf7ed10c6d64aa021c1cc3db8796, type: 3}
---- !u!61 &939961635761318790
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7589704350300899045}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.25, y: 0.34}
-    newSize: {x: 0.25, y: 0.34}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.34}
-  m_EdgeRadius: 0
 --- !u!50 &2287115024544738514
 Rigidbody2D:
   serializedVersion: 4
@@ -181,3 +155,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.030850165, y: 0.022332996}
   m_EdgeRadius: 0
+--- !u!70 &3214710735081489630
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589704350300899045}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.2, y: 0.34}
+  m_Direction: 0

@@ -3205,8 +3205,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "En el proceso de la programaci\xF3n se establecen unas normas y acciones.
-    Estas se aplican a cualquier elemento del juego para que sea funcional."
+  m_text: "En el proceso de la <color=red>programaci\xF3n</color> se establecen unas
+    normas y acciones. Estas se aplican a cualquier elemento del juego para que sea
+    funcional."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3674,6 +3675,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858032858}
   m_CullTransparentMesh: 1
+--- !u!1 &928892293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 928892295}
+  - component: {fileID: 928892294}
+  m_Layer: 0
+  m_Name: audiomanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &928892294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928892293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d92edbb25ba4641a2dfba3d8d28e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listSounds:
+  - name: adsfca
+    audioClip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  volume: 0
+  function: 0
+  mute: 0
+  botonFunction: 
+  loop: 0
+--- !u!4 &928892295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928892293}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5253727, y: -2.1282923, z: -0.06168805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973973301
 GameObject:
   m_ObjectHideFlags: 0

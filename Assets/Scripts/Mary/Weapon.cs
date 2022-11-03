@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private float damage;
+    [SerializeField] private int damage;
     public string type;
     [SerializeField] private float distance;
 
@@ -143,4 +143,13 @@ public class Weapon : MonoBehaviour
         _player.gameObject.GetComponent<Player>().canAttack = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("da");
+        Debug.Log("da");
+        if (collision.GetComponent<Enemy>())
+        {
+            collision.GetComponent<Enemy>().TakeDmg(damage);
+        }
+    }
 }
