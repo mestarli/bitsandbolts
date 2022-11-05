@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: 7ad195f7034a0fb48ba1e6b0e16f4a98
   - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 4bbc1c3b7f6d00a47936d779452ad31d
+  - enabled: 1
     path: Assets/Scenes/SelectOption.unity
     guid: 233fe8140291c1748b5a79956abd1660
   - enabled: 1
     path: Assets/Scenes/OscarScene.unity
     guid: c51dc9eaad5f93048b92c32d33bc78d4
-  - enabled: 1
-    path: Assets/Scenes/Level_01.unity
-    guid: 5580b09a36875214c9cc0e72d2d4e430
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
