@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Sprite player_01_model;
     [SerializeField] private Sprite player_02_model;
     // Start is called before the first frame update
+    [SerializeField] private Transform weaponPoint;
+    [SerializeField] private GameObject[] weapons;
     private void Awake()
     {
         rigidbody_ = GetComponent<Rigidbody2D>();
@@ -124,7 +126,7 @@ public class Player : MonoBehaviour
         //Press g for change weapon
         if (Input.GetKeyDown(KeyCode.Q) && canAttack)
         {
-            ContentWeapon.transform.GetChild(positionActiveWeapon).gameObject.SetActive(false);
+
             if (positionActiveWeapon < 2)
             {
                 positionActiveWeapon += 1;
@@ -133,10 +135,7 @@ public class Player : MonoBehaviour
             {
                 positionActiveWeapon = 0;
             }
-           
-            ContentWeapon.transform.GetChild(positionActiveWeapon).gameObject.SetActive(true);
-
-            Debug.Log("Posicion "+positionActiveWeapon);
+            
             UIGame.instance.UpdateWeapon(positionActiveWeapon);
         }
 
@@ -154,12 +153,14 @@ public class Player : MonoBehaviour
         {
             canAttack = false;
             ContentWeapon.transform.localPosition = topPositionWeapons;
-            ContentWeapon.transform.GetChild(positionActiveWeapon).GetComponent<Weapon>().WeaponAttack();
+            GameObject weapon = Instantiate(weapons[positionActiveWeapon], weaponPoint.position, Quaternion.identity);
+            weapon.GetComponent<Weapon>().isAttacking = true;
         }
         if(!topAttack && Input.GetMouseButtonDown(0) && canAttack)
         {
             canAttack = false;
-            ContentWeapon.transform.GetChild(positionActiveWeapon).GetComponent<Weapon>().WeaponAttack();
+            GameObject weapon = Instantiate(weapons[positionActiveWeapon], weaponPoint.position, Quaternion.identity);
+            weapon.GetComponent<Weapon>().isAttacking = true;
         }
 
         

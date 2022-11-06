@@ -7454,7 +7454,6 @@ GameObject:
   m_Component:
   - component: {fileID: 968527774}
   - component: {fileID: 968527776}
-  - component: {fileID: 968527775}
   m_Layer: 0
   m_Name: Boomerang
   m_TagString: Untagged
@@ -7482,31 +7481,6 @@ RectTransform:
   m_AnchoredPosition: {x: 6.8361855, y: 0.9475097}
   m_SizeDelta: {x: 0.30999994, y: 0.31388998}
   m_Pivot: {x: 8.821752, y: 0.91492623}
---- !u!114 &968527775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968527773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9ee2b110ac0e549a602359bd40211c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  type: axe
-  distance: 0
-  direction: {x: 0, y: 0}
-  startPosition: {x: 0, y: 0}
-  endPosition: {x: 0, y: 0}
-  rotateSpeed: 0
-  moveSpeed: 0
-  isRotating: 0
-  _player: {fileID: 0}
-  isAttacking: 0
-  boomerangTimer: 0
-  returning: 0
 --- !u!212 &968527776
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9301,7 +9275,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1190437945}
   - component: {fileID: 1190437946}
-  - component: {fileID: 1190437947}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -9381,31 +9354,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1190437947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190437944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9ee2b110ac0e549a602359bd40211c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  type: axe
-  distance: 0
-  direction: {x: 0, y: 0}
-  startPosition: {x: 0, y: 0}
-  endPosition: {x: 0, y: 0}
-  rotateSpeed: 0
-  moveSpeed: 0
-  isRotating: 0
-  _player: {fileID: 0}
-  isAttacking: 0
-  boomerangTimer: 0
-  returning: 0
 --- !u!1 &1192403840
 GameObject:
   m_ObjectHideFlags: 0
@@ -10846,7 +10794,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1417106395}
   - component: {fileID: 1417106397}
-  - component: {fileID: 1417106396}
   m_Layer: 0
   m_Name: Dagger
   m_TagString: Untagged
@@ -10874,31 +10821,6 @@ RectTransform:
   m_AnchoredPosition: {x: 9.581791, y: 5.873596}
   m_SizeDelta: {x: 0.30999994, y: 0.31388998}
   m_Pivot: {x: 8.870419, y: 0.9164065}
---- !u!114 &1417106396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417106394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9ee2b110ac0e549a602359bd40211c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  type: axe
-  distance: 0
-  direction: {x: 0, y: 0}
-  startPosition: {x: 0, y: 0}
-  endPosition: {x: 0, y: 0}
-  rotateSpeed: 0
-  moveSpeed: 0
-  isRotating: 0
-  _player: {fileID: 0}
-  isAttacking: 0
-  boomerangTimer: 0
-  returning: 0
 --- !u!212 &1417106397
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14031,6 +13953,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!4 &1781094336 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1306270827160854275, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
+  m_PrefabInstance: {fileID: 1306270825450164317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1785758341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16749,6 +16676,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1306270825379974124, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
+      propertyPath: weaponPoint
+      value: 
+      objectReference: {fileID: 1781094336}
+    - target: {fileID: 1306270825379974124, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
       propertyPath: player_01_model
       value: 
       objectReference: {fileID: 21300000, guid: 274d5f0ebd06d8c47acfb25bb29524fd, type: 3}
@@ -16756,6 +16687,22 @@ PrefabInstance:
       propertyPath: player_02_model
       value: 
       objectReference: {fileID: 21300000, guid: e65cea5ebc103854fbd70c117b5d2871, type: 3}
+    - target: {fileID: 1306270825379974124, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
+      propertyPath: weapons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306270825379974124, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1317338492472268772, guid: 8603defd8342547468ace6788b9d4360, type: 3}
+    - target: {fileID: 1306270825379974124, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
+      propertyPath: weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 670643733769089727, guid: 816a5b6c7a4b66648b220df1ff36247f, type: 3}
+    - target: {fileID: 1306270825379974124, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
+      propertyPath: weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 5774771044501376170, guid: 8d3b9a8aa355ec24684f2f2350f5fe45, type: 3}
     - target: {fileID: 1306270825379974125, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -16883,6 +16830,14 @@ PrefabInstance:
     - target: {fileID: 1306270827135737990, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
       propertyPath: m_Offset.y
       value: -0.007869378
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306270827160854275, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.095
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306270827160854275, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f89606fa43f2864f9e8b18743418acf, type: 3}
