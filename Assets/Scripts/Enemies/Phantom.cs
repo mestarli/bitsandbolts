@@ -17,7 +17,14 @@ public class Phantom : Enemy
     {
         player = FindObjectOfType<Player>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
-        version = UI_Manager.Instance.PhantomVersion();
+        if (UI_Manager.Instance)
+        {
+            version = UI_Manager.Instance.PhantomVersion();
+        }
+        else
+        {
+            version = 1;
+        }
     }
     private void Start()
     {

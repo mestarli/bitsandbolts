@@ -42,6 +42,9 @@ public class Player : MonoBehaviour
     public bool canAttack;
 
     [SerializeField] private bool topAttack;
+    
+    [SerializeField] private Sprite player_01_model;
+    [SerializeField] private Sprite player_02_model;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -51,6 +54,16 @@ public class Player : MonoBehaviour
         topPositionWeapons = new Vector2(-0.49f,0.58f);
         canAttack = true;
         topAttack = false;
+        if(UI_Manager.Instance){
+            if (UI_Manager.Instance.ModelerSelection() == 1)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = player_01_model;
+            }
+            if (UI_Manager.Instance.ModelerSelection() == 2)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = player_02_model;
+            }
+        }
     }
 
     // Update is called once per frame

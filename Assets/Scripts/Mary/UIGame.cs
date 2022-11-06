@@ -24,15 +24,17 @@ public class UIGame : MonoBehaviour
 
     void Start()
     {
-        if (UI_Manager.Instance.TextureVersion() == 1)
-        {
-            Scenario.transform.GetChild(0).gameObject.SetActive(true);
-            Scenario.transform.GetChild(1).gameObject.SetActive(false);
-        }
-        else
-        {
-            Scenario.transform.GetChild(0).gameObject.SetActive(false);
-            Scenario.transform.GetChild(1).gameObject.SetActive(true);
+        if(UI_Manager.Instance){
+            if (UI_Manager.Instance.TextureVersion() == 1)
+            {
+                Scenario.transform.GetChild(0).gameObject.SetActive(true);
+                Scenario.transform.GetChild(1).gameObject.SetActive(false);
+            }
+            else
+            {
+                Scenario.transform.GetChild(0).gameObject.SetActive(false);
+                Scenario.transform.GetChild(1).gameObject.SetActive(true);
+            }
         }
     }
 

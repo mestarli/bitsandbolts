@@ -16,7 +16,14 @@ public class Spider : Enemy
 
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
-        version = UI_Manager.Instance.SpiderVersion();
+        if (UI_Manager.Instance)
+        {
+            version = UI_Manager.Instance.SpiderVersion();
+        }
+        else
+        {
+            version = 1;
+        }
     }
 
     // Update is called once per frame
