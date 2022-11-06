@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     public float knockbackVerticalForce;
     public float tenacity = 6;
 
-    private bool facingRight = true;
+    public bool facingRight = true;
     
     [SerializeField] private int life = 3;
     [SerializeField] private GameObject ContentWeapon;
@@ -160,6 +160,14 @@ public class Player : MonoBehaviour
         {
             canAttack = false;
             GameObject weapon = Instantiate(weapons[positionActiveWeapon], weaponPoint.position, Quaternion.identity);
+            if (positionActiveWeapon == 1 && facingRight)
+            {
+                weapon.transform.localRotation = Quaternion.Euler(0, 0,-89.287f);
+            }
+            if (positionActiveWeapon == 1 && !facingRight)
+            {
+                weapon.transform.localRotation = Quaternion.Euler(0, 0,90.058f);
+            }
             weapon.GetComponent<Weapon>().isAttacking = true;
         }
 

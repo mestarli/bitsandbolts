@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317338492472268772}
-  m_LocalRotation: {x: -0, y: -0, z: 0.015095098, w: 0.99988616}
+  m_LocalRotation: {x: 0.052765686, y: -0.00079667073, z: 0.015075518, w: 0.99849284}
   m_LocalPosition: {x: 0.73, y: 0.14, z: 0}
-  m_LocalScale: {x: 1.6003495, y: 1.6003495, z: 1.6003495}
+  m_LocalScale: {x: -1.60035, y: 1.6003495, z: 1.6003495}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.73}
+  m_LocalEulerAnglesHint: {x: 6.05, y: 0, z: 1.73}
 --- !u!212 &1317338492472268774
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -153,9 +153,10 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0}
   endPosition: {x: 0, y: 0}
   rotateSpeed: 600
-  moveSpeed: 10
+  moveSpeed: 6
   isRotating: 1
   _player: {fileID: 0}
   isAttacking: 0
   boomerangTimer: 0
   returning: 0
+  timeToRespawn: 0
