@@ -127,7 +127,7 @@ public class Weapon : MonoBehaviour
     {
         isRotating = true;
         boomerangTimer =  endPosition.x - transform.localPosition.x;
-        if (boomerangTimer  == 0)
+        if (boomerangTimer== 0)
         {
             returning = true;
         }
