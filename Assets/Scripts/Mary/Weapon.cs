@@ -176,13 +176,19 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.GetComponent<Enemy>())
         {
             collision.GetComponent<Enemy>().TakeDmg(damage);
+           
+        }
+        if (collision.GetComponent<Player>() && returning)
+        {
             _player.gameObject.GetComponent<Player>().canAttack = true;
             Destroy(gameObject);
         }
-        if (collision.GetComponent<Player>() && returning)
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor") && type != "boomerang")
         {
             _player.gameObject.GetComponent<Player>().canAttack = true;
             Destroy(gameObject);
