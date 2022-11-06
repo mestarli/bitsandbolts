@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +25,8 @@ public class UIGame : MonoBehaviour
 
     void Start()
     {
-        if(UI_Manager.Instance){
+        try
+        {
             if (UI_Manager.Instance.TextureVersion() == 1)
             {
                 Scenario.transform.GetChild(0).gameObject.SetActive(true);
@@ -35,6 +37,10 @@ public class UIGame : MonoBehaviour
                 Scenario.transform.GetChild(0).gameObject.SetActive(false);
                 Scenario.transform.GetChild(1).gameObject.SetActive(true);
             }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
         }
     }
 

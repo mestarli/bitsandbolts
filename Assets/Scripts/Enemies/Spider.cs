@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spider : Enemy
 {
@@ -16,13 +18,14 @@ public class Spider : Enemy
 
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
-        if (UI_Manager.Instance)
+        try
         {
             version = UI_Manager.Instance.SpiderVersion();
         }
-        else
+        catch (Exception e)
         {
             version = 1;
+            Console.WriteLine(e);
         }
     }
 

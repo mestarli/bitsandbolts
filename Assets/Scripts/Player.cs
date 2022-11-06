@@ -56,16 +56,26 @@ public class Player : MonoBehaviour
         topPositionWeapons = new Vector2(-0.49f,0.58f);
         canAttack = true;
         topAttack = false;
-        if(UI_Manager.Instance){
+
+        try
+        {
             if (UI_Manager.Instance.ModelerSelection() == 1)
             {
+                Debug.Log("Has elegido el personaje "+UI_Manager.Instance.ModelerSelection());
                 gameObject.GetComponent<SpriteRenderer>().sprite = player_01_model;
             }
             if (UI_Manager.Instance.ModelerSelection() == 2)
             {
+                Debug.Log("Has elegido el personaje "+UI_Manager.Instance.ModelerSelection());
                 gameObject.GetComponent<SpriteRenderer>().sprite = player_02_model;
             }
         }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+          
+
     }
 
     // Update is called once per frame

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,13 +17,14 @@ public class Skeleton : Enemy
     {
         player = FindObjectOfType<Player>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
-        if (UI_Manager.Instance)
+        try
         {
-            version = UI_Manager.Instance.SkeletonVersion();
+            version = UI_Manager.Instance.SpiderVersion();
         }
-        else
+        catch (Exception e)
         {
             version = 1;
+            Console.WriteLine(e);
         }
     }
     void Start()
