@@ -43,6 +43,11 @@ public class UI_Manager : MonoBehaviour
     {
         return textureSelection;
     }
+    
+    public int ModelerSelection()
+    {
+        return modelerSelection;
+    }
 
 
     void Awake()

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spider : Enemy
 {
@@ -16,14 +18,22 @@ public class Spider : Enemy
 
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
-        version = UI_Manager.Instance.SpiderVersion();
+        try
+        {
+            version = UI_Manager.Instance.SpiderVersion();
+        }
+        catch (Exception e)
+        {
+            version = 1;
+            Console.WriteLine(e);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector2 dir = player.transform.position - transform.position;
-        if (!Physics2D.Raycast(transform.position, dir, dir.magnitude, floor))
+        if (rigidbody2D_.gravityScale == 0 && !Physics2D.Raycast(transform.position, dir, dir.magnitude, floor))
         {
             rigidbody2D_.gravityScale = 1;
             transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);

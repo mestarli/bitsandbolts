@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,16 @@ public class Bat : Enemy
     private void Awake()
     {
         rigidbody2D_ = GetComponent<Rigidbody2D>();
-        version = UI_Manager.Instance.BatVersion();
+        try
+        {
+            version = UI_Manager.Instance.SpiderVersion();
+        }
+        catch (Exception e)
+        {
+            version = 1;
+            Console.WriteLine(e);
+        }
+        
     }
     private void Start()
     {

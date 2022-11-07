@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,15 +25,22 @@ public class UIGame : MonoBehaviour
 
     void Start()
     {
-        if (UI_Manager.Instance.TextureVersion() == 1)
+        try
         {
-            Scenario.transform.GetChild(0).gameObject.SetActive(true);
-            Scenario.transform.GetChild(1).gameObject.SetActive(false);
+            if (UI_Manager.Instance.TextureVersion() == 1)
+            {
+                Scenario.transform.GetChild(0).gameObject.SetActive(true);
+                Scenario.transform.GetChild(1).gameObject.SetActive(false);
+            }
+            else
+            {
+                Scenario.transform.GetChild(0).gameObject.SetActive(false);
+                Scenario.transform.GetChild(1).gameObject.SetActive(true);
+            }
         }
-        else
+        catch (Exception e)
         {
-            Scenario.transform.GetChild(0).gameObject.SetActive(false);
-            Scenario.transform.GetChild(1).gameObject.SetActive(true);
+            Console.WriteLine(e);
         }
     }
 

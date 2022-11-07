@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Phantom : Enemy
 {
@@ -17,7 +19,15 @@ public class Phantom : Enemy
     {
         player = FindObjectOfType<Player>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
-        version = UI_Manager.Instance.PhantomVersion();
+        try
+        {
+            version = UI_Manager.Instance.SpiderVersion();
+        }
+        catch (Exception e)
+        {
+            version = 1;
+            Console.WriteLine(e);
+        }
     }
     private void Start()
     {

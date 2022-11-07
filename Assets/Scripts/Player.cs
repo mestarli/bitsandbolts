@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     public float knockbackVerticalForce;
     public float tenacity = 6;
 
-    private bool facingRight = true;
+    public bool facingRight = true;
     
     [SerializeField] private int life = 3;
     [SerializeField] private GameObject ContentWeapon;
@@ -42,7 +42,12 @@ public class Player : MonoBehaviour
     public bool canAttack;
 
     [SerializeField] private bool topAttack;
+    
+    [SerializeField] private Sprite player_01_model;
+    [SerializeField] private Sprite player_02_model;
     // Start is called before the first frame update
+    [SerializeField] private Transform weaponPoint;
+    [SerializeField] private GameObject[] weapons;
     private void Awake()
     {
         rigidbody_ = GetComponent<Rigidbody2D>();
@@ -51,6 +56,26 @@ public class Player : MonoBehaviour
         topPositionWeapons = new Vector2(-0.49f,0.58f);
         canAttack = true;
         topAttack = false;
+
+        try
+        {
+            if (UI_Manager.Instance.ModelerSelection() == 1)
+            {
+                Debug.Log("Has elegido el personaje "+UI_Manager.Instance.ModelerSelection());
+                gameObject.GetComponent<SpriteRenderer>().sprite = player_01_model;
+            }
+            if (UI_Manager.Instance.ModelerSelection() == 2)
+            {
+                Debug.Log("Has elegido el personaje "+UI_Manager.Instance.ModelerSelection());
+                gameObject.GetComponent<SpriteRenderer>().sprite = player_02_model;
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+          
+
     }
 
     // Update is called once per frame
@@ -111,7 +136,7 @@ public class Player : MonoBehaviour
         //Press g for change weapon
         if (Input.GetKeyDown(KeyCode.Q) && canAttack)
         {
-            ContentWeapon.transform.GetChild(positionActiveWeapon).gameObject.SetActive(false);
+
             if (positionActiveWeapon < 2)
             {
                 positionActiveWeapon += 1;
@@ -120,10 +145,7 @@ public class Player : MonoBehaviour
             {
                 positionActiveWeapon = 0;
             }
-           
-            ContentWeapon.transform.GetChild(positionActiveWeapon).gameObject.SetActive(true);
-
-            Debug.Log("Posicion "+positionActiveWeapon);
+            
             UIGame.instance.UpdateWeapon(positionActiveWeapon);
         }
 
@@ -141,12 +163,22 @@ public class Player : MonoBehaviour
         {
             canAttack = false;
             ContentWeapon.transform.localPosition = topPositionWeapons;
-            ContentWeapon.transform.GetChild(positionActiveWeapon).GetComponent<Weapon>().WeaponAttack();
+            GameObject weapon = Instantiate(weapons[positionActiveWeapon], weaponPoint.position, Quaternion.identity);
+            weapon.GetComponent<Weapon>().isAttacking = true;
         }
         if(!topAttack && Input.GetMouseButtonDown(0) && canAttack)
         {
             canAttack = false;
-            ContentWeapon.transform.GetChild(positionActiveWeapon).GetComponent<Weapon>().WeaponAttack();
+            GameObject weapon = Instantiate(weapons[positionActiveWeapon], weaponPoint.position, Quaternion.identity);
+            if (positionActiveWeapon == 1 && facingRight)
+            {
+                weapon.transform.localRotation = Quaternion.Euler(0, 0,-89.287f);
+            }
+            if (positionActiveWeapon == 1 && !facingRight)
+            {
+                weapon.transform.localRotation = Quaternion.Euler(0, 0,90.058f);
+            }
+            weapon.GetComponent<Weapon>().isAttacking = true;
         }
 
         
