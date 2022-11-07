@@ -33,7 +33,7 @@ public class Spider : Enemy
     void Update()
     {
         Vector2 dir = player.transform.position - transform.position;
-        if (!Physics2D.Raycast(transform.position, dir, dir.magnitude, floor))
+        if (rigidbody2D_.gravityScale == 0 && !Physics2D.Raycast(transform.position, dir, dir.magnitude, floor))
         {
             rigidbody2D_.gravityScale = 1;
             transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9ee2b110ac0e549a602359bd40211c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1
   type: axe
   distance: 0
   direction: {x: 0, y: 0}

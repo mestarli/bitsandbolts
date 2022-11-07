@@ -180,7 +180,6 @@ public class Weapon : MonoBehaviour
         if (collision.GetComponent<Enemy>())
         {
             collision.GetComponent<Enemy>().TakeDmg(damage);
-           
         }
         if (collision.GetComponent<Player>() && returning)
         {
