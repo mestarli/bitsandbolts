@@ -8,7 +8,7 @@ public class Limit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Player>()|| collision.GetComponent<Enemy>() || collision.GetComponent<EnemyProjectile>())
+        if (collision.GetComponent<Player>()|| collision.GetComponent<Enemy>() || collision.GetComponent<EnemyProjectile>() || collision.GetComponent<Weapon>())
         {
             collision.transform.position = new Vector2(limit_.transform.position.x, collision.transform.position.y);
         }
