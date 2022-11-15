@@ -181,6 +181,10 @@ public class Weapon : MonoBehaviour
         {
             collision.GetComponent<Enemy>().TakeDmg(damage);
         }
+        if (collision.GetComponent<Boss_01>())
+        {
+            collision.GetComponent<Boss_01>().TakeDamage(damage);
+        }
         if (collision.GetComponent<Player>() && returning)
         {
             _player.gameObject.GetComponent<Player>().canAttack = true;

@@ -14,6 +14,7 @@ TagManager:
   - option_06
   - option_07
   - option_08
+  - fire
   layers:
   - Default
   - TransparentFX
