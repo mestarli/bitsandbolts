@@ -45,13 +45,13 @@ public class Weapon : MonoBehaviour
                 break;
             case "dagger":
                 damage = 1;
-                distance = 6;
-                timeToRespawn = 0.2f;
+                distance = 7;
+                timeToRespawn = 0.4f;
                 break;
             case "boomerang":
                 damage = 2;
-                distance = 4;
-                timeToRespawn = 0.8f;
+                distance = 5;
+                timeToRespawn = 0.9f;
                 break;
             default:
                 Debug.Log("No has definido el tipo de arma");
