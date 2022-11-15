@@ -46,11 +46,7 @@ public class Boss_01 : MonoBehaviour
         arrivePosition =  endPosition.y - transform.localPosition.y;
         Debug.Log("La posicion es "+arrivePosition);
         Debug.Log("La end position "+endPosition);
-        if (arrivePosition  > 0 && playerReference.GetComponent<Rigidbody2D>().velocity.magnitude > 0)
-        {
-            Debug.Log("Nos movemos");
-            _rigidbody2D.velocity = new Vector2(0,direction.magnitude * speed);
-        }
+      
 
     }
 

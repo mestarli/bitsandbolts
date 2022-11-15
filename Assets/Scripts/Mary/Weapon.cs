@@ -39,17 +39,17 @@ public class Weapon : MonoBehaviour
         switch (type)
         {
             case "axe":
-                damage = 4;
+                damage = 3;
                 distance = 3;
                 timeToRespawn = 0.8f;
                 break;
             case "dagger":
-                damage = 2;
+                damage = 1;
                 distance = 6;
                 timeToRespawn = 0.2f;
                 break;
             case "boomerang":
-                damage = 3;
+                damage = 2;
                 distance = 4;
                 timeToRespawn = 0.8f;
                 break;
