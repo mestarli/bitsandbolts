@@ -5,13 +5,13 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public float upMaxDistance;
-    Player player;
+    public GameObject player;
     public float cameraSpeed;
 
 
     private void Awake()
     {
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>().gameObject;
     }
 
     private void Update()

@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Win : MonoBehaviour
 {
+    public GameObject end;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Player>())
         {
-            SceneManager.LoadScene("Win");
+            FindObjectOfType<CameraFollow>().GetComponent<BoxCollider2D>().enabled = false;
+            FindObjectOfType<CameraFollow>().player = end;
         }
+    }
+
+    public void End() 
+    { 
+            SceneManager.LoadScene("Win");
     }
 }
