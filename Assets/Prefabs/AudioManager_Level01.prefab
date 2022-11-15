@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6787652234810582792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6787652234810582798}
+  - component: {fileID: 6787652234810582793}
+  m_Layer: 0
+  m_Name: AudioManager_Level01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6787652234810582798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787652234810582792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.6381955, y: 2.964393, z: 45.411034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6787652234810582793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787652234810582792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d92edbb25ba4641a2dfba3d8d28e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listSounds:
+  - name: bg_level_01
+    audioClip: {fileID: 8300000, guid: 22bc2828a3c9e724697af25bba727563, type: 3}
+    volume: 1
+    pitch: 0
+    playOnAwake: 1
+    audioSource: {fileID: 0}
+  - name: jump
+    audioClip: {fileID: 8300000, guid: ccb9067f8eb69184e83bc5d86d0e35a5, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: death
+    audioClip: {fileID: 8300000, guid: 747fcfd2b8af89a4fbb2e42091c91647, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: golpe-skeleto
+    audioClip: {fileID: 8300000, guid: 2a30f849f00a91c4db57a7d6ff577b7e, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: golpe-aranya
+    audioClip: {fileID: 8300000, guid: f7f9467f382e32d42b9ef1d6e751e881, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: golpe-fantasma
+    audioClip: {fileID: 8300000, guid: 57ec735505f35874a9111d64faa43528, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: golpe-murcielago
+    audioClip: {fileID: 8300000, guid: 6ae2c577d8f2a6c408ad2d89eba2b59d, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: golpe-mimico
+    audioClip: {fileID: 8300000, guid: f28d58de0203ef846ba98bbe8d19306f, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: golpe-player
+    audioClip: {fileID: 8300000, guid: cde068e504e470847aba0074c0ab4a2b, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: muerte-skeleto
+    audioClip: {fileID: 8300000, guid: 28eb978969d97014e9c6a3fd78d06586, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: muerte-aranya
+    audioClip: {fileID: 8300000, guid: ff044f1883ae04e44ace08662ab5c931, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: muerte-fantasma
+    audioClip: {fileID: 8300000, guid: 049e7ee1df5bc3446b8c00e4d0614e79, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: muerte-murcielago
+    audioClip: {fileID: 8300000, guid: 3549b6e8b5f97ce43ae95ae0ac178592, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: muerte-mimico
+    audioClip: {fileID: 8300000, guid: ef976e2267e56e9489982a7a0155eaf5, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - name: bote-calavera
+    audioClip: {fileID: 8300000, guid: 5d7935a999616374a80536f1fb8bff43, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  volume: 1
+  function: 0
+  mute: 0
+  botonFunction: 
+  loop: 0

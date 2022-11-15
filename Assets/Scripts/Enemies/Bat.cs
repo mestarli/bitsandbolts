@@ -94,4 +94,16 @@ public class Bat : Enemy
 
         }
     }
+    public override void TakeDmg(int dmg)
+    {
+        if (hp > 0)
+        {
+            AudioManager.Instance.PlaySong("golpe-murcielago");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySong("muerte-murcielago");
+        }
+        base.TakeDmg(dmg);
+    }
 }

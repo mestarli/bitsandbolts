@@ -25,6 +25,7 @@ public class UIGame : MonoBehaviour
 
     void Start()
     {
+        AudioManager.Instance.PlaySong("bg_level_01");
         try
         {
             if (UI_Manager.Instance.TextureVersion() == 1)

@@ -85,6 +85,14 @@ public class Phantom : Enemy
 
     public override void TakeDmg(int dmg)
     {
+        if (hp > 0)
+        {
+            AudioManager.Instance.PlaySong("golpe-fantasma");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySong("muerte-fantasma");
+        }
         StartCoroutine(Teleport());
         base.TakeDmg(dmg);
     }

@@ -72,4 +72,16 @@ public class Spider : Enemy
             }
         }
     }
+    public override void TakeDmg(int dmg)
+    {
+        if (hp > 0)
+        {
+            AudioManager.Instance.PlaySong("golpe-aranya");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySong("muerte-aranya");
+        }
+        base.TakeDmg(dmg);
+    }
 }

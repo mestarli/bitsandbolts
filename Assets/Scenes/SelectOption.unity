@@ -3270,7 +3270,7 @@ GameObject:
   - component: {fileID: 928892295}
   - component: {fileID: 928892294}
   m_Layer: 0
-  m_Name: audiomanager
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3289,13 +3289,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listSounds:
-  - name: adsfca
-    audioClip: {fileID: 0}
-    volume: 0
+  - name: bg-music
+    audioClip: {fileID: 8300000, guid: 3f8d8ae219e2054489ecd19cb74d5944, type: 3}
+    volume: 0.52
     pitch: 0
-    playOnAwake: 0
+    playOnAwake: 1
     audioSource: {fileID: 0}
-  volume: 0
+  volume: 1
   function: 0
   mute: 0
   botonFunction: 

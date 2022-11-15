@@ -19,4 +19,9 @@ public class Sound
 
     [HideInInspector]
     public AudioSource audioSource;
+
+    void Update()
+    {
+        Debug.Log(name);
+    }
 }

@@ -38,6 +38,7 @@ public class Skeleton : Enemy
         if (roam)
         {
             rigidbody2D_.velocity = transform.right * speedRoam;
+            AudioManager.Instance.PlaySong("bote-calavera");
         }
     }
 
@@ -69,5 +70,18 @@ public class Skeleton : Enemy
     {
         yield return new WaitForSeconds(time);
         IA();
+    }
+    
+    public override void TakeDmg(int dmg)
+    {
+        if (hp > 0)
+        {
+            AudioManager.Instance.PlaySong("golpe-skeleto");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySong("muerte-skeleto");
+        }
+        base.TakeDmg(dmg);
     }
 }

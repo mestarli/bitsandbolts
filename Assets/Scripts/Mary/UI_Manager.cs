@@ -67,12 +67,12 @@ public class UI_Manager : MonoBehaviour
         { 
             Instance = this; 
         } 
+        AudioManager.Instance.PlaySong("bg-music");
     }
     
 
     public void ChangeSelector(GameObject selector)
     {
-        Debug.Log("Hello");
         selector.transform.GetChild(0).gameObject.SetActive(!selector.transform.GetChild(0).gameObject.active);
         selector.transform.GetChild(1).gameObject.SetActive(!selector.transform.GetChild(1).gameObject.active);
     }

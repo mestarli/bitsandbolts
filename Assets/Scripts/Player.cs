@@ -200,6 +200,7 @@ public class Player : MonoBehaviour
     }
     void Jump()
     {
+        AudioManager.Instance.PlaySong("jump");
         Instantiate(particlesJump, transform.position, transform.rotation);
         rigidbody_.AddForce(new Vector2(0, jumpForce));
        
@@ -216,6 +217,7 @@ public class Player : MonoBehaviour
     {
         if (knockback == 0)
         {
+          
             if (dir.x > 0)
             {
                 knockback = -knockbackHorizontalForce;
@@ -226,8 +228,14 @@ public class Player : MonoBehaviour
             }
             life -= 1;
             UIGame.instance.UpdateLife(life);
+            if (life > 0)
+            {
+                AudioManager.Instance.PlaySong("golpe-player");
+
+            }
             if (life <= 0)
             {
+                AudioManager.Instance.PlaySong("death");
                 Die();
 
             }
@@ -237,9 +245,15 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        SceneManager.LoadScene("GameOver");
+        StartCoroutine(DieCall());
     }
+    IEnumerator DieCall()
+    {
+        
+        yield return new WaitForSeconds(0.8f);
+        SceneManager.LoadScene("GameOver");
 
+    }
     void Flip()
     {
         Vector3 currentScale = gameObject.transform.localScale;

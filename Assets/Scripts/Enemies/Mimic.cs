@@ -40,5 +40,17 @@ public class Mimic : Enemy
             Jump();
         }
     }
+    public override void TakeDmg(int dmg)
+    {
+        if (hp > 0)
+        {
+            AudioManager.Instance.PlaySong("golpe-mimico");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySong("muerte-mimico");
+        }
+        base.TakeDmg(dmg);
+    }
 
 }
