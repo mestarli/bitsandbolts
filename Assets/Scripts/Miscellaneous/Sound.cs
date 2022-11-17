@@ -17,8 +17,10 @@ public class Sound
 
     public bool playOnAwake;
 
+    public bool loop;
     [HideInInspector]
     public AudioSource audioSource;
+
 
     void Update()
     {

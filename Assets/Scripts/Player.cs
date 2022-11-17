@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     public float knockbackVerticalForce;
     public float tenacity = 6;
 
+    public bool slip;
+
     public bool facingRight = true;
     
     [SerializeField] private int life = 3;
@@ -196,7 +198,10 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rigidbody_.velocity = new Vector2(speed *(inputMov+knockback),rigidbody_.velocity.y);
+        if (!slip)
+        {
+            rigidbody_.velocity = new Vector2(speed * (inputMov + knockback), rigidbody_.velocity.y);
+        }
     }
     void Jump()
     {

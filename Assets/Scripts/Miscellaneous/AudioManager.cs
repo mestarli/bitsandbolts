@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,6 +31,7 @@ public class AudioManager : MonoBehaviour
 
             sound.audioSource.volume = sound.volume * volume;
             sound.audioSource.playOnAwake = sound.playOnAwake;
+            sound.audioSource.loop = sound.loop;
         }
     }
 
