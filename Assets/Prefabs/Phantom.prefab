@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1438105191470715057}
   - component: {fileID: 3112097220127628970}
   - component: {fileID: 6491898060858346831}
+  - component: {fileID: 1103667522948686146}
   m_Layer: 6
   m_Name: Phantom
   m_TagString: Untagged
@@ -155,3 +156,23 @@ MonoBehaviour:
   maxDistance: 4
   player: {fileID: 0}
   projetile: {fileID: 2932491555183586981, guid: 4947852fd689a17428b88973d5242c77, type: 3}
+--- !u!95 &1103667522948686146
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237767463132087856}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf96a997ce1b3de40b5ed0af6f05ca3b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
