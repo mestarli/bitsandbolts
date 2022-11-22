@@ -39,12 +39,11 @@ public class Player : MonoBehaviour
     
     [SerializeField] private int positionActiveWeapon = 0;
     
-    [SerializeField]private Vector2 initialPositionWeapons;
-    [SerializeField]private Vector2 topPositionWeapons;
+    [SerializeField]private GameObject topPositionWeapons;
     
     public bool canAttack;
 
-    [SerializeField] private bool topAttack;
+    public bool topAttack;
     
     [SerializeField] private Sprite player_01_model;
     [SerializeField] private Sprite player_02_model;
@@ -55,8 +54,6 @@ public class Player : MonoBehaviour
     {
         rigidbody_ = GetComponent<Rigidbody2D>();
         checker = transform.GetChild(0);
-        initialPositionWeapons = new Vector2(0,0);
-        topPositionWeapons = new Vector2(-0.49f,0.58f);
         canAttack = true;
         topAttack = false;
 
@@ -163,19 +160,19 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W) && canAttack)
         {
-            //topAttack = true;
+            topAttack = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.W) && canAttack)
+        if (Input.GetKeyUp(KeyCode.W))
         {
-            //topAttack = false;
+            topAttack = false;
         }
 
         if(positionActiveWeapon!=1 &&  topAttack && Input.GetMouseButtonDown(0) && canAttack)
         {
             canAttack = false;
-            ContentWeapon.transform.localPosition = topPositionWeapons;
-            GameObject weapon = Instantiate(weapons[positionActiveWeapon], weaponPoint.position, Quaternion.identity);
+            //ContentWeapon.transform.localPosition = topPositionWeapons;
+            GameObject weapon = Instantiate(weapons[positionActiveWeapon], topPositionWeapons.transform.position, Quaternion.identity);
             weapon.GetComponent<Weapon>().isAttacking = true;
         }
         if(!topAttack && Input.GetMouseButtonDown(0) && canAttack)

@@ -35,18 +35,36 @@ public class Weapon : MonoBehaviour
         {
             WeaponFacing = true;
         }
-        Debug.Log(startPosition);
+        //Debug.Log(startPosition);
         switch (type)
         {
             case "axe":
                 damage = 3;
                 distance = 3;
-                timeToRespawn = 0.8f;
+                timeToRespawn = 0.9f;
+                if (WeaponFacing)
+                {
+                    endPosition= new Vector2(_player.transform.localPosition.x + distance, _player.transform.localPosition.y + distance);
+                }
+                else
+                {
+                    endPosition= new Vector2(_player.transform.localPosition.x - distance, _player.transform.localPosition.y  + distance);
+
+                }
                 break;
             case "dagger":
                 damage = 1;
                 distance = 7;
                 timeToRespawn = 0.4f;
+                if (WeaponFacing)
+                {
+                    endPosition= new Vector2(_player.transform.localPosition.x + distance, _player.transform.localPosition.y);
+                }
+                else
+                {
+                    endPosition= new Vector2(_player.transform.localPosition.x - distance, _player.transform.localPosition.y);
+
+                }
                 break;
             case "boomerang":
                 damage = 2;
@@ -87,35 +105,24 @@ public class Weapon : MonoBehaviour
 
     private void AxeAttack()
     {
-        if (WeaponFacing)
-        {
-            endPosition= new Vector2(_player.transform.localPosition.x + distance, _player.transform.localPosition.y);
-        }
-        else
-        {
-            endPosition= new Vector2(_player.transform.localPosition.x - distance, _player.transform.localPosition.y);
 
-        }
-        
         transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPosition, moveSpeed * Time.deltaTime);
         boomerangTimer =  endPosition.x - transform.localPosition.x;
-        if (boomerangTimer  == 0)
+        //Debug.Log(boomerangTimer);
+        if (boomerangTimer  == 0 && !returning)
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            returning = true;
+            isRotating = false;
+        }
+        if(returning)
+        {
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 2;
         }
     }
     private void DaggerAttack()
     {
         isRotating = false;
-        if (WeaponFacing)
-        {
-            endPosition= new Vector2(_player.transform.localPosition.x + distance, _player.transform.localPosition.y);
-        }
-        else
-        {
-            endPosition= new Vector2(_player.transform.localPosition.x - distance, _player.transform.localPosition.y);
 
-        }
         transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPosition, moveSpeed * Time.deltaTime);
         boomerangTimer =  endPosition.x - transform.localPosition.x;
         if (boomerangTimer  == 0)
@@ -133,22 +140,30 @@ public class Weapon : MonoBehaviour
         }
         if (!returning)
         {
-            if (WeaponFacing)
+            if (!_player.GetComponent<Player>().topAttack)
             {
-                endPosition= new Vector2(_player.transform.localPosition.x + distance, _player.transform.localPosition.y);
-            }
+                if (WeaponFacing)
+                {
+                    endPosition= new Vector2(_player.transform.localPosition.x + distance, _player.transform.localPosition.y);
+                }
+                else
+                {
+                    endPosition= new Vector2(_player.transform.localPosition.x - distance, _player.transform.localPosition.y);
+
+                }
+                transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPosition, moveSpeed * Time.deltaTime);
+                }
             else
             {
-                endPosition= new Vector2(_player.transform.localPosition.x - distance, _player.transform.localPosition.y);
+                endPosition= new Vector2(_player.transform.localPosition.x, _player.transform.localPosition.y + distance);
+                transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPosition, moveSpeed * Time.deltaTime);
+
 
             }
-            transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPosition, moveSpeed * Time.deltaTime);
-             
         }
         else
         {
             transform.localPosition = Vector2.MoveTowards(transform.localPosition, startPosition, moveSpeed * Time.deltaTime);
-
         }
     }
 
@@ -191,7 +206,7 @@ public class Weapon : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor") && type != "boomerang")
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor") && type != "boomerang" && type != "axe")
         {
             _player.gameObject.GetComponent<Player>().canAttack = true;
             Destroy(gameObject);
