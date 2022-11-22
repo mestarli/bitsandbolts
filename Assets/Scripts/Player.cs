@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public float knockbackHorizontalForce = 2;
     public float knockbackVerticalForce;
     public float tenacity = 6;
+    int doubleJump;
 
     public bool slip;
 
@@ -114,8 +115,12 @@ public class Player : MonoBehaviour
         {
             inputMov = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && inGround) 
+        if (Input.GetKeyDown(KeyCode.Space) && inGround || Input.GetKeyDown(KeyCode.Space) && doubleJump > 0) 
         {
+            if (!inGround)
+            {
+                doubleJump--;
+            }
             inGround = false;
             Jump();
         }
@@ -126,6 +131,11 @@ public class Player : MonoBehaviour
         }
         
         inGround = Physics2D.OverlapCircle(checker.position, radiusChecker, layerMaskGround);
+
+        if (inGround)
+        {
+            doubleJump = 1;
+        }
 
         lastPosition = transform.position.y;
         
