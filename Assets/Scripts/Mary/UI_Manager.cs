@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 public class UI_Manager : MonoBehaviour
 {
     // Recogemos los paneles para habilitar o deshabilitar
+    [SerializeField] private GameObject panel_presentacion;
     [SerializeField] private GameObject panel_developer;
     [SerializeField] private GameObject panel_texture;
     [SerializeField] private GameObject panel_animation;
     [SerializeField] private GameObject panel_modeler;
+    [SerializeField] private GameObject panel_controles;
+    
+    [SerializeField] private GameObject animation_01;
+    [SerializeField] private GameObject animation_02;
     
     // Guardamos los valores en 1 o 2, para las diferentes opciones elegidas
     [SerializeField] private int phantomVersion = 0;
@@ -54,10 +59,12 @@ public class UI_Manager : MonoBehaviour
     {
         if (panel_developer != null)
         {
-            panel_developer.SetActive(true);
+            panel_presentacion.SetActive(true);
+            panel_developer.SetActive(false);
             panel_modeler.SetActive(false);
             panel_texture.SetActive(false);
             panel_animation.SetActive(false);
+            panel_controles.SetActive(false);
         }
         if (Instance != null && Instance != this) 
         { 
@@ -81,6 +88,10 @@ public class UI_Manager : MonoBehaviour
     {
         switch (level)
         {
+            case 0:
+                panel_presentacion.SetActive(false);
+                panel_developer.SetActive(true);
+                break;
             case 1:
                 if (GameObject.FindWithTag("option_01") != null)
                 {
@@ -147,6 +158,17 @@ public class UI_Manager : MonoBehaviour
                 {
                     selection = 2;
                 }
+
+                if (modelerSelection == 2)
+                {
+                    animation_01.SetActive(false);
+                    animation_02.SetActive(true);
+                }
+                if (modelerSelection == 1)
+                {
+                    animation_01.SetActive(true);
+                    animation_02.SetActive(false);
+                }
                 panel_animation.SetActive(true);
                 panel_texture.SetActive(false);
                 AddOptionSelected(level,selection);
@@ -161,8 +183,11 @@ public class UI_Manager : MonoBehaviour
                     selection = 2;
                 }
                 panel_animation.SetActive(false);
-                Debug.Log("Ya deberías pasar al nivel principal");
+                panel_controles.SetActive(true);
                 AddOptionSelected(level,selection);
+                break;
+            case 5:
+                SceneManager.LoadScene("Level_01");
                 break;
             default:
                 Debug.Log("No has pasado ningun nivel");
@@ -201,7 +226,6 @@ public class UI_Manager : MonoBehaviour
             case 4:
                 Debug.Log("Has elegido las opciones de animacion");
                 animationSelection = selection;
-                SceneManager.LoadScene("Level_01");
                 break;
             default:
                 skeletonVersion= 1;
