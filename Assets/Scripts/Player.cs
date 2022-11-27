@@ -59,15 +59,28 @@ public class Player : MonoBehaviour
 
         try
         {
-            if (UI_Manager.Instance.ModelerSelection() == 1)
+            if (UI_Manager.Instance.ModelerSelection() == 1 && UI_Manager.Instance.AnimationSelection()  == 1)
             {
-                Debug.Log("Has elegido el personaje "+UI_Manager.Instance.ModelerSelection());
                 gameObject.GetComponent<SpriteRenderer>().sprite = player_01_model;
+                gameObject.GetComponent<Animator>().SetLayerWeight(0,1f);
             }
-            if (UI_Manager.Instance.ModelerSelection() == 2)
+            if (UI_Manager.Instance.ModelerSelection() == 2  && UI_Manager.Instance.AnimationSelection()  == 1)
             {
-                Debug.Log("Has elegido el personaje "+UI_Manager.Instance.ModelerSelection());
                 gameObject.GetComponent<SpriteRenderer>().sprite = player_02_model;
+                gameObject.GetComponent<Animator>().SetLayerWeight(0,0f);
+                gameObject.GetComponent<Animator>().SetLayerWeight(1,1f);
+            }
+            if (UI_Manager.Instance.ModelerSelection() == 1 && UI_Manager.Instance.AnimationSelection()  == 2)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = player_01_model;
+                gameObject.GetComponent<Animator>().SetLayerWeight(0,0f);
+                gameObject.GetComponent<Animator>().SetLayerWeight(2,1f);
+            }
+            if (UI_Manager.Instance.ModelerSelection() == 2  && UI_Manager.Instance.AnimationSelection()  == 2)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = player_02_model;
+                gameObject.GetComponent<Animator>().SetLayerWeight(0,0f);
+                gameObject.GetComponent<Animator>().SetLayerWeight(3,1f);
             }
         }
         catch (Exception e)

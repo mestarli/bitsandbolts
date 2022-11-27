@@ -20,10 +20,23 @@ public class StartMenu : MonoBehaviour
 
     public void BtnStart()
     {
-        SceneManager.LoadScene("SelectOption");
+        StartCoroutine(btnStart());
     }
     public void BtnExit()
     {
+        StartCoroutine(btnExit());
+    }
+
+    IEnumerator btnStart()
+    {
+        AudioManager.Instance.PlaySong("btn_click");
+        yield return new WaitForSeconds(0.2f);
+        SceneManager.LoadScene("SelectOption");
+    }
+    IEnumerator btnExit()
+    {
+        AudioManager.Instance.PlaySong("btn_click");
+        yield return new WaitForSeconds(0.2f);
         Application.Quit();
     }
 }

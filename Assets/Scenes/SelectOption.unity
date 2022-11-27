@@ -272,12 +272,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_text: "Bienvenido jugador/a , esto es Bits & Bolts, se me ha encargado de explicarte
+    c\xF3mo se desarrolla un videojuego, te mostrar\xE9 los diferentes departamentos
+    que intervienen y su funci\xF3n.  Una vez finalices las diferentes etapas que
+    componen un juego, podr\xE1s ver los controles. Pulsa en el bot\xF3n de continuar
+    para empezar el recorrido :)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1a8d0f9d5895674e8306fbf4aeef262, type: 2}
   m_sharedMaterial: {fileID: -2094392325276619210, guid: f1a8d0f9d5895674e8306fbf4aeef262, type: 2}
@@ -1507,8 +1506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000095367, y: -318}
-  m_SizeDelta: {x: 99.3774, y: 21.6271}
+  m_AnchoredPosition: {x: 0.0000014989637, y: -196.99998}
+  m_SizeDelta: {x: 134.9968, y: 29.3788}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &372476133
 MonoBehaviour:
@@ -4965,6 +4964,13 @@ MonoBehaviour:
     volume: 0.52
     pitch: 0
     playOnAwake: 1
+    loop: 1
+    audioSource: {fileID: 0}
+  - name: btn_click
+    audioClip: {fileID: 8300000, guid: 3ced504c40286a845a4fb0a30f313e53, type: 3}
+    volume: 0.52
+    pitch: 0
+    playOnAwake: 0
     loop: 0
     audioSource: {fileID: 0}
   volume: 1

@@ -53,6 +53,10 @@ public class UI_Manager : MonoBehaviour
     {
         return modelerSelection;
     }
+    public int AnimationSelection()
+    {
+        return animationSelection;
+    }
 
 
     void Awake()
@@ -86,6 +90,7 @@ public class UI_Manager : MonoBehaviour
 
     public void ChangePanel(int level)
     {
+        AudioManager.Instance.PlaySong("btn_click");
         switch (level)
         {
             case 0:
