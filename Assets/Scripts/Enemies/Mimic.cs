@@ -34,6 +34,7 @@ public class Mimic : Enemy
             collision.GetComponent<Player>().TakeDamage(dir);
             rigidbody2D_.gravityScale = 1;
             Jump();
+            animator.SetTrigger("Activate");
         }
         if (collision.gameObject.CompareTag("Floor") && rigidbody2D_.gravityScale!=0)
         {
