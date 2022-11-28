@@ -191,6 +191,7 @@ public class Player : MonoBehaviour
 
         if(positionActiveWeapon!=1 &&  topAttack && Input.GetMouseButtonDown(0) && canAttack)
         {
+            animator.SetTrigger("Attack");
             canAttack = false;
             //ContentWeapon.transform.localPosition = topPositionWeapons;
             GameObject weapon = Instantiate(weapons[positionActiveWeapon], topPositionWeapons.transform.position, Quaternion.identity);
@@ -198,6 +199,7 @@ public class Player : MonoBehaviour
         }
         if(!topAttack && Input.GetMouseButtonDown(0) && canAttack)
         {
+            animator.SetTrigger("Attack");
             canAttack = false;
             GameObject weapon = Instantiate(weapons[positionActiveWeapon], weaponPoint.position, Quaternion.identity);
             if (positionActiveWeapon == 1 && facingRight)
