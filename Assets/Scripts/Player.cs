@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     public float knockbackVerticalForce;
     public float tenacity = 6;
     int doubleJump;
+    public float maxInmuneTime;
+    float inmuneTime;
 
     public bool slip;
 
@@ -94,6 +96,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (inmuneTime > 0)
+        {
+            inmuneTime -= Time.deltaTime;
+        }
         if(knockback != 0)
         {
             if (knockback > 0)
@@ -240,45 +246,42 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(Vector2 dir)
     {
-        if (knockback == 0)
+        if (inmuneTime <= 0)
         {
-          
-            if (dir.x > 0)
+            if (knockback == 0)
             {
-                knockback = -knockbackHorizontalForce;
-            }
-            else
-            {
-                knockback = knockbackHorizontalForce;
-            }
-            life -= 1;
-            UIGame.instance.UpdateLife(life);
-            if (life > 0)
-            {
-                AudioManager.Instance.PlaySong("golpe-player");
 
-            }
-            if (life <= 0)
-            {
-                AudioManager.Instance.PlaySong("death");
-                Die();
+                if (dir.x > 0)
+                {
+                    knockback = -knockbackHorizontalForce;
+                }
+                else
+                {
+                    knockback = knockbackHorizontalForce;
+                }
+                life -= 1;
+                UIGame.instance.UpdateLife(life);
+                if (life > 0)
+                {
+                    AudioManager.Instance.PlaySong("golpe-player");
+                    inmuneTime = maxInmuneTime;
+                }
+                if (life <= 0)
+                {
+                    AudioManager.Instance.PlaySong("death");
+                    Die();
 
+                }
+                rigidbody_.AddForce(transform.up * knockbackVerticalForce);
             }
-            rigidbody_.AddForce(transform.up * knockbackVerticalForce);
         }
     }
 
     public void Die()
     {
-        StartCoroutine(DieCall());
-    }
-    IEnumerator DieCall()
-    {
-        
-        yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene("GameOver");
-
     }
+    
     void Flip()
     {
         Vector3 currentScale = gameObject.transform.localScale;
