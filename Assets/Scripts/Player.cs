@@ -10,6 +10,7 @@ using Debug = UnityEngine.Debug;
 public class Player : MonoBehaviour
 {
     public GameObject particlesJump;
+    public Animator animator;
 
     float inputMov;
     Rigidbody2D rigidbody_;
@@ -153,6 +154,7 @@ public class Player : MonoBehaviour
             doubleJump = 1;
         }
 
+        animator.SetBool("OnGround", inGround);
         lastPosition = transform.position.y;
         
         
@@ -231,6 +233,7 @@ public class Player : MonoBehaviour
     }
     void Jump()
     {
+        animator.SetTrigger("Jump");
         AudioManager.Instance.PlaySong("jump");
         Instantiate(particlesJump, transform.position, transform.rotation);
         rigidbody_.AddForce(new Vector2(0, jumpForce));
@@ -238,6 +241,7 @@ public class Player : MonoBehaviour
     }
     void StopJump()
     {
+        animator.SetTrigger("StopJump");
         if (goingUp && !inGround)
         {
             rigidbody_.velocity = new Vector2(rigidbody_.velocity.x, rigidbody_.velocity.y/1.5f);
@@ -250,6 +254,7 @@ public class Player : MonoBehaviour
         {
             if (knockback == 0)
             {
+                animator.SetTrigger("Hit");
 
                 if (dir.x > 0)
                 {

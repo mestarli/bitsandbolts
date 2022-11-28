@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlesJump: {fileID: 4246907989980071804, guid: 959f93be7471ace4380516b65d446de0, type: 3}
+  animator: {fileID: 397965147372745483}
   speed: 5
   jumpForce: 820
   gravityScale: -89
