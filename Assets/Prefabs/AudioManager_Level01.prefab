@@ -50,90 +50,140 @@ MonoBehaviour:
     volume: 1
     pitch: 0
     playOnAwake: 1
+    loop: 0
     audioSource: {fileID: 0}
   - name: jump
     audioClip: {fileID: 8300000, guid: ccb9067f8eb69184e83bc5d86d0e35a5, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: death
     audioClip: {fileID: 8300000, guid: 747fcfd2b8af89a4fbb2e42091c91647, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: golpe-skeleto
     audioClip: {fileID: 8300000, guid: 2a30f849f00a91c4db57a7d6ff577b7e, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: golpe-aranya
     audioClip: {fileID: 8300000, guid: f7f9467f382e32d42b9ef1d6e751e881, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: golpe-fantasma
     audioClip: {fileID: 8300000, guid: 57ec735505f35874a9111d64faa43528, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: golpe-murcielago
     audioClip: {fileID: 8300000, guid: 6ae2c577d8f2a6c408ad2d89eba2b59d, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: golpe-mimico
     audioClip: {fileID: 8300000, guid: f28d58de0203ef846ba98bbe8d19306f, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: golpe-player
     audioClip: {fileID: 8300000, guid: cde068e504e470847aba0074c0ab4a2b, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: muerte-skeleto
     audioClip: {fileID: 8300000, guid: 28eb978969d97014e9c6a3fd78d06586, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: muerte-aranya
     audioClip: {fileID: 8300000, guid: ff044f1883ae04e44ace08662ab5c931, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: muerte-fantasma
     audioClip: {fileID: 8300000, guid: 049e7ee1df5bc3446b8c00e4d0614e79, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: muerte-murcielago
     audioClip: {fileID: 8300000, guid: 3549b6e8b5f97ce43ae95ae0ac178592, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: muerte-mimico
     audioClip: {fileID: 8300000, guid: ef976e2267e56e9489982a7a0155eaf5, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
     audioSource: {fileID: 0}
   - name: bote-calavera
     audioClip: {fileID: 8300000, guid: 5d7935a999616374a80536f1fb8bff43, type: 3}
     volume: 0.75
     pitch: 0
     playOnAwake: 0
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: lanzar-hacha
+    audioClip: {fileID: 8300000, guid: ed88ae02e2505394281a0747de6845d4, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: lanzar-daga
+    audioClip: {fileID: 8300000, guid: 4b41e9db360e10f42a6afd10c5cd7300, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: lanzar-boomerang
+    audioClip: {fileID: 8300000, guid: 8d3631667e817f8459c7528dfb98a2d3, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: boss_01
+    audioClip: {fileID: 8300000, guid: 341fdc63e7b402243b946a39aeea3156, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    loop: 1
+    audioSource: {fileID: 0}
+  - name: grito_boss
+    audioClip: {fileID: 8300000, guid: 9b36d097cec3c2243b7ec8ce7da4ea7c, type: 3}
+    volume: 0.75
+    pitch: 0
+    playOnAwake: 0
+    loop: 1
     audioSource: {fileID: 0}
   volume: 1
   function: 0

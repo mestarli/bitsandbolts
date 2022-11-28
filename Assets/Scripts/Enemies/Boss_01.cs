@@ -15,8 +15,7 @@ public class Boss_01 : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private float speed;
     [SerializeField] private float distance;
-    private Vector2 endPosition;
-    private float  arrivePosition;
+    private bool  isArrive;
     [SerializeField] private Transform pointToFire;
     [SerializeField] private GameObject fireBall;
     [SerializeField] private GameObject fireWall;
@@ -29,6 +28,8 @@ public class Boss_01 : MonoBehaviour
         head_02.SetActive(false);
         speed = 2f;
         distance = 3f;
+        AudioManager.Instance.PlaySong("grito_boss");
+
     }
 
     // Update is called once per frame
@@ -41,12 +42,24 @@ public class Boss_01 : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector2 direction = new Vector2(transform.position.x, playerReference.transform.position.y);
-        endPosition = new Vector2(transform.position.x, playerReference.transform.localPosition.y + distance);
-        arrivePosition =  endPosition.y - transform.localPosition.y;
-        Debug.Log("La posicion es "+arrivePosition);
-        Debug.Log("La end position "+endPosition);
-      
+        Vector2 dir = new Vector2(transform.position.x, playerReference.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
+ 
+        if (transform.localPosition.y > 0.6f && transform.localPosition.y < 0.7f)
+        {
+            isArrive = true;
+        }
+        if (transform.localPosition.y < -0.2f && transform.localPosition.y > -0.3f)
+        {
+            isArrive = false;
+        }
+        if(!isArrive)
+        {
+            _rigidbody2D.velocity = new Vector2(0, dir.magnitude * speed);
+        }
+        if(isArrive)
+        {
+            _rigidbody2D.velocity = new Vector2(0, -dir.magnitude * speed);
+        }
 
     }
 
@@ -59,7 +72,6 @@ public class Boss_01 : MonoBehaviour
 
         if (life_head_01 <= 0)
         {
-            head_01.SetActive(false);
             head_02.SetActive(true);
         }
 
@@ -98,7 +110,7 @@ public class Boss_01 : MonoBehaviour
     
     private void fireWallAttack()
     {
-        Vector3 positionWall = new Vector3(0.9274117f,0.83f,0f);
+        Vector3 positionWall = new Vector3(0.9274117f,64.35f,0f);
         Instantiate(fireWall, positionWall, Quaternion.identity);
 
     }

@@ -19,8 +19,14 @@ public class ActivateBoss : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.GetComponent<Player>())
+        {
+            boss.SetActive(true);
+            AudioManager.Instance.PlaySong(boss_song);
+            AudioManager.Instance.StopSong("bg_level_01");
+            gameObject.GetComponent<ActivateBoss>().enabled = false;
+        }
     }
 }
