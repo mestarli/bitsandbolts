@@ -19,6 +19,9 @@ public class Boss_01 : MonoBehaviour
     [SerializeField] private Transform pointToFire;
     [SerializeField] private GameObject fireBall;
     [SerializeField] private GameObject fireWall;
+    
+    [SerializeField] private GameObject ActivateFinish;
+    
     private bool isAttacking = false;
     void Start()
     {
@@ -82,6 +85,7 @@ public class Boss_01 : MonoBehaviour
 
         if (life_head_01 <= 0 && life_head_02 <= 0)
         {
+            ActivateFinish.SetActive(true);
             Destroy(gameObject);
         }
     }
