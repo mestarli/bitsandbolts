@@ -127,11 +127,14 @@ public class Player : MonoBehaviour
         if (knockback == 0)
         {
             inputMov = Input.GetAxisRaw("Horizontal");
+
         }
         else
         {
             inputMov = 0;
         }
+
+       
         if (Input.GetKeyDown(KeyCode.Space) && inGround || Input.GetKeyDown(KeyCode.Space) && doubleJump > 0) 
         {
             if (!inGround)
@@ -141,6 +144,17 @@ public class Player : MonoBehaviour
             inGround = false;
             Jump();
         }
+
+        if (doubleJump == 0)
+        {
+            Debug.Log(doubleJump);
+            //animator.SetTrigger("Jump_02");
+        }
+        
+       /* else if(Input.GetKeyDown(KeyCode.Space) && doubleJump > 0)
+        {
+            animator.SetTrigger("Jump_02");
+        }*/
    
         if (!Input.GetKey(KeyCode.Space))
         {
@@ -151,6 +165,7 @@ public class Player : MonoBehaviour
 
         if (inGround)
         {
+            animator.SetBool("OnGround",true);
             doubleJump = 1;
         }
 
@@ -163,7 +178,7 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("OscarScene");
         }
         
-        //Press g for change weapon
+        //Press q for change weapon
         if (Input.GetKeyDown(KeyCode.Q) && canAttack)
         {
 
@@ -231,12 +246,24 @@ public class Player : MonoBehaviour
         if (!slip)
         {
             rigidbody_.velocity = new Vector2(speed * (inputMov + knockback), rigidbody_.velocity.y);
+           
         }
+
+        if (rigidbody_.velocity.x != 0)
+        {
+            animator.SetBool("Walking",true);
+        }
+        else
+        {
+            animator.SetBool("Walking",false);
+        }
+
     }
     void Jump()
     {
+        animator.SetTrigger("Jump_02");
         rigidbody_.velocity = new Vector2(rigidbody_.velocity.x, 0);
-        animator.SetTrigger("Jump");
+       
         AudioManager.Instance.PlaySong("jump");
         Instantiate(particlesJump, transform.position - new Vector3(0,0.7f,0), transform.rotation);
         rigidbody_.AddForce(new Vector2(0, jumpForce));
