@@ -8531,7 +8531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020787140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.57, y: 36.9, z: 0}
+  m_LocalPosition: {x: -1.08, y: 36.83, z: 0}
   m_LocalScale: {x: 1.0187093, y: 84.586426, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10301,6 +10301,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1209288124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1209288125}
+  m_Layer: 8
+  m_Name: ControladorCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1209288125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209288124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1463856701}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1223007375
 GameObject:
   m_ObjectHideFlags: 0
@@ -11498,7 +11529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399414305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.04, y: 36.9, z: 0}
+  m_LocalPosition: {x: 11.77, y: 36.8, z: 0}
   m_LocalScale: {x: -1.018709, y: 84.586426, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11967,6 +11998,7 @@ Transform:
   - {fileID: 1065276642}
   - {fileID: 1006688753}
   - {fileID: 527486400}
+  - {fileID: 1209288125}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14024,7 +14056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upMaxDistance: 1
-  player: {fileID: 0}
+  objecToFollow: {fileID: 0}
   cameraSpeed: 7
 --- !u!114 &1624811144
 MonoBehaviour:

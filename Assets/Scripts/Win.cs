@@ -11,7 +11,7 @@ public class Win : MonoBehaviour
         if (collision.GetComponent<Player>())
         {
             FindObjectOfType<CameraFollow>().GetComponent<BoxCollider2D>().enabled = false;
-            FindObjectOfType<CameraFollow>().player = end;
+            FindObjectOfType<CameraFollow>().objecToFollow = end;
         }
     }
 
