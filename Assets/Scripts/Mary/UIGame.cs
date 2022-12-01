@@ -8,6 +8,7 @@ public class UIGame : MonoBehaviour
     [SerializeField] private GameObject[] Life;
     [SerializeField] private GameObject[] WeaponSelected;
     [SerializeField] private GameObject Scenario;
+
     // Start is called before the first frame update
     public static UIGame instance;
 

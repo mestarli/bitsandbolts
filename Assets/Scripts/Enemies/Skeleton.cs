@@ -15,6 +15,7 @@ public class Skeleton : Enemy
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         player = FindObjectOfType<Player>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         try
@@ -49,8 +50,7 @@ public class Skeleton : Enemy
             Vector2 dist = player.transform.position - transform.position;
             if(dist.magnitude <= range)
             {
-                GameObject bone = (GameObject)Instantiate(boneProjectile, transform.position, new Quaternion(0,0,0,0));
-                bone.GetComponent<EnemyProjectile>().Set(dist);
+                animator.SetTrigger("Shoot");
             }
             StartCoroutine(waitTime(3));
         }
@@ -65,7 +65,12 @@ public class Skeleton : Enemy
             StartCoroutine(waitTime(1));
         }
     }
-
+    public void ShootBone()
+    {
+        Vector2 dist = player.transform.position - transform.position;
+        GameObject bone = (GameObject)Instantiate(boneProjectile, transform.position, new Quaternion(0, 0, 0, 0));
+        bone.GetComponent<EnemyProjectile>().Set(dist);
+    }
     IEnumerator waitTime(float time)
     {
         yield return new WaitForSeconds(time);

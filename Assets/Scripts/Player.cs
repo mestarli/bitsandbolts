@@ -10,6 +10,7 @@ using Debug = UnityEngine.Debug;
 public class Player : MonoBehaviour
 {
     public GameObject particlesJump;
+    public Animator animator;
 
     float inputMov;
     Rigidbody2D rigidbody_;
@@ -28,6 +29,8 @@ public class Player : MonoBehaviour
     public float knockbackVerticalForce;
     public float tenacity = 6;
     int doubleJump;
+    public float maxInmuneTime;
+    float inmuneTime;
 
     public bool slip;
 
@@ -59,15 +62,28 @@ public class Player : MonoBehaviour
 
         try
         {
-            if (UI_Manager.Instance.ModelerSelection() == 1)
+            if (UI_Manager.Instance.ModelerSelection() == 1 && UI_Manager.Instance.AnimationSelection()  == 1)
             {
-                Debug.Log("Has elegido el personaje "+UI_Manager.Instance.ModelerSelection());
                 gameObject.GetComponent<SpriteRenderer>().sprite = player_01_model;
+                gameObject.GetComponent<Animator>().SetLayerWeight(0,1f);
             }
-            if (UI_Manager.Instance.ModelerSelection() == 2)
+            if (UI_Manager.Instance.ModelerSelection() == 2  && UI_Manager.Instance.AnimationSelection()  == 1)
             {
-                Debug.Log("Has elegido el personaje "+UI_Manager.Instance.ModelerSelection());
                 gameObject.GetComponent<SpriteRenderer>().sprite = player_02_model;
+                gameObject.GetComponent<Animator>().SetLayerWeight(0,0f);
+                gameObject.GetComponent<Animator>().SetLayerWeight(1,1f);
+            }
+            if (UI_Manager.Instance.ModelerSelection() == 1 && UI_Manager.Instance.AnimationSelection()  == 2)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = player_01_model;
+                gameObject.GetComponent<Animator>().SetLayerWeight(0,0f);
+                gameObject.GetComponent<Animator>().SetLayerWeight(2,1f);
+            }
+            if (UI_Manager.Instance.ModelerSelection() == 2  && UI_Manager.Instance.AnimationSelection()  == 2)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = player_02_model;
+                gameObject.GetComponent<Animator>().SetLayerWeight(0,0f);
+                gameObject.GetComponent<Animator>().SetLayerWeight(3,1f);
             }
         }
         catch (Exception e)
@@ -81,6 +97,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (inmuneTime > 0)
+        {
+            inmuneTime -= Time.deltaTime;
+        }
         if(knockback != 0)
         {
             if (knockback > 0)
@@ -134,6 +154,7 @@ public class Player : MonoBehaviour
             doubleJump = 1;
         }
 
+        animator.SetBool("OnGround", inGround);
         lastPosition = transform.position.y;
         
         
@@ -170,6 +191,7 @@ public class Player : MonoBehaviour
 
         if(positionActiveWeapon!=1 &&  topAttack && Input.GetMouseButtonDown(0) && canAttack)
         {
+            animator.SetTrigger("Attack");
             canAttack = false;
             //ContentWeapon.transform.localPosition = topPositionWeapons;
             GameObject weapon = Instantiate(weapons[positionActiveWeapon], topPositionWeapons.transform.position, Quaternion.identity);
@@ -177,6 +199,7 @@ public class Player : MonoBehaviour
         }
         if(!topAttack && Input.GetMouseButtonDown(0) && canAttack)
         {
+            animator.SetTrigger("Attack");
             canAttack = false;
             GameObject weapon = Instantiate(weapons[positionActiveWeapon], weaponPoint.position, Quaternion.identity);
             if (positionActiveWeapon == 1 && facingRight)
@@ -213,6 +236,7 @@ public class Player : MonoBehaviour
     void Jump()
     {
         rigidbody_.velocity = new Vector2(rigidbody_.velocity.x, 0);
+        animator.SetTrigger("Jump");
         AudioManager.Instance.PlaySong("jump");
         Instantiate(particlesJump, transform.position, transform.rotation);
         rigidbody_.AddForce(new Vector2(0, jumpForce));
@@ -220,6 +244,7 @@ public class Player : MonoBehaviour
     }
     void StopJump()
     {
+        animator.SetTrigger("StopJump");
         if (goingUp && !inGround)
         {
             rigidbody_.velocity = new Vector2(rigidbody_.velocity.x, rigidbody_.velocity.y/1.5f);
@@ -228,45 +253,43 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(Vector2 dir)
     {
-        if (knockback == 0)
+        if (inmuneTime <= 0)
         {
-          
-            if (dir.x > 0)
+            if (knockback == 0)
             {
-                knockback = -knockbackHorizontalForce;
-            }
-            else
-            {
-                knockback = knockbackHorizontalForce;
-            }
-            life -= 1;
-            UIGame.instance.UpdateLife(life);
-            if (life > 0)
-            {
-                AudioManager.Instance.PlaySong("golpe-player");
+                animator.SetTrigger("Hit");
 
-            }
-            if (life <= 0)
-            {
-                AudioManager.Instance.PlaySong("death");
-                Die();
+                if (dir.x > 0)
+                {
+                    knockback = -knockbackHorizontalForce;
+                }
+                else
+                {
+                    knockback = knockbackHorizontalForce;
+                }
+                life -= 1;
+                UIGame.instance.UpdateLife(life);
+                if (life > 0)
+                {
+                    AudioManager.Instance.PlaySong("golpe-player");
+                    inmuneTime = maxInmuneTime;
+                }
+                if (life <= 0)
+                {
+                    AudioManager.Instance.PlaySong("death");
+                    Die();
 
+                }
+                rigidbody_.AddForce(transform.up * knockbackVerticalForce);
             }
-            rigidbody_.AddForce(transform.up * knockbackVerticalForce);
         }
     }
 
     public void Die()
     {
-        StartCoroutine(DieCall());
-    }
-    IEnumerator DieCall()
-    {
-        
-        yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene("GameOver");
-
     }
+    
     void Flip()
     {
         Vector3 currentScale = gameObject.transform.localScale;

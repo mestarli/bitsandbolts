@@ -150,6 +150,7 @@ MonoBehaviour:
   hp: 3
   version: 0
   explosion: {fileID: 1274395479995899951, guid: 1c48d6a5c9b84d94db84f4181835a899, type: 3}
+  animator: {fileID: 6646606441596886544}
   horizontalSpeed: 150
   verticalSpeed: 575
 --- !u!95 &6646606441596886544

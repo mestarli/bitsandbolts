@@ -42,9 +42,18 @@ public class Spider : Enemy
         {
             rigidbody2D_.velocity = new Vector2( dir.normalized.x * horizontalSpeed/55, rigidbody2D_.velocity.y);
         }
+        if(player.transform.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(-4.184f, transform.localScale.y, transform.localScale.y);
+        }
+        else
+        {
+            transform.localScale = new Vector3(4.184f, transform.localScale.y, transform.localScale.y);
+        }
     }
     void Jump()
     {
+        animator.SetTrigger("Jump");
         rigidbody2D_.velocity = new Vector2(0, 0);
         Vector2 direction = player.transform.position - transform.position;
         int coin = Random.Range(0, 5);

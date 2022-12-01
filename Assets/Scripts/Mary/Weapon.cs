@@ -105,7 +105,7 @@ public class Weapon : MonoBehaviour
 
     private void AxeAttack()
     {
-
+        AudioManager.Instance.PlaySong("lanzar-hacha");
         transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPosition, moveSpeed * Time.deltaTime);
         boomerangTimer =  endPosition.x - transform.localPosition.x;
         //Debug.Log(boomerangTimer);
@@ -122,7 +122,7 @@ public class Weapon : MonoBehaviour
     private void DaggerAttack()
     {
         isRotating = false;
-
+        AudioManager.Instance.PlaySong("lanzar-daga");
         transform.localPosition = Vector2.MoveTowards(transform.localPosition, endPosition, moveSpeed * Time.deltaTime);
         boomerangTimer =  endPosition.x - transform.localPosition.x;
         if (boomerangTimer  == 0)
@@ -134,6 +134,7 @@ public class Weapon : MonoBehaviour
     {
         isRotating = true;
         boomerangTimer =  endPosition.x - transform.localPosition.x;
+        AudioManager.Instance.PlaySong("lanzar-boomerang");
         if (boomerangTimer== 0)
         {
             returning = true;

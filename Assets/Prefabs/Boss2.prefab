@@ -104,9 +104,12 @@ MonoBehaviour:
   hp: 3
   version: 0
   explosion: {fileID: 1274395479995899951, guid: 1c48d6a5c9b84d94db84f4181835a899, type: 3}
-  vel: 3
-  batSpawners: []
+  vel: 1
+  batSpawners:
+  - {fileID: 0}
+  - {fileID: 0}
   Bat: {fileID: 4099210691469003897, guid: 653f2ec5e68a4e545be8534c4fd21692, type: 3}
+  speed: 20
 --- !u!50 &1104674348667307820
 Rigidbody2D:
   serializedVersion: 4

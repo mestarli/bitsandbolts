@@ -45,6 +45,16 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+    public void StopSong(string name)
+    {
+        foreach (Sound sound in listSounds)
+        {
+            if (sound.name == name && !function && !mute && !loop)
+            {
+                sound.audioSource.Stop();
+            }
+        }
+    }
 
 
 }

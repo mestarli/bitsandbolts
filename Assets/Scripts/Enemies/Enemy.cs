@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int hp;
     public int version;
     public GameObject explosion;
+    public Animator animator;
 
     public virtual void TakeDmg(int dmg)
     {

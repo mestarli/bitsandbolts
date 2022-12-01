@@ -8,7 +8,16 @@ public class Void : MonoBehaviour
     {
         if (collision.GetComponent<Player>())
         {
-            collision.GetComponent<Player>().Die();
+            collision.GetComponent<BoxCollider2D>().enabled = false;
+            StartCoroutine(DieCall(collision.GetComponent<Player>()));
         }
+    }
+
+    IEnumerator DieCall(Player player)
+    {
+
+        yield return new WaitForSeconds(0.4f);
+        player.Die();
+
     }
 }
