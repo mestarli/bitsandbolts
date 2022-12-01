@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2069241615, guid: 3608adecc0b10ba4a9db9797db9546a5, type: 3}
+  m_Sprite: {fileID: -2069241615, guid: 2ab993dd1a09d934c8fd1790f7d80909, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   hp: 3
   version: 2
   explosion: {fileID: 1274395479995899951, guid: 1c48d6a5c9b84d94db84f4181835a899, type: 3}
+  animator: {fileID: 0}
   range: 10
   speedRoam: 2
   player: {fileID: 0}
