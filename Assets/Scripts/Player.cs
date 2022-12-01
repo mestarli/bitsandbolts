@@ -238,8 +238,17 @@ public class Player : MonoBehaviour
         rigidbody_.velocity = new Vector2(rigidbody_.velocity.x, 0);
         animator.SetTrigger("Jump");
         AudioManager.Instance.PlaySong("jump");
-        Instantiate(particlesJump, transform.position, transform.rotation);
+        Instantiate(particlesJump, transform.position - new Vector3(0,0.7f,0), transform.rotation);
         rigidbody_.AddForce(new Vector2(0, jumpForce));
+       
+    }void FirstJump()
+    {
+        Jump();
+       
+    }
+    void DoubleJump()
+    {
+        Jump();
        
     }
     void StopJump()

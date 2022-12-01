@@ -52,12 +52,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Entities
-    uniqueID: 1006498897
-    locked: 0
   - name: Level
     uniqueID: 80878691
     locked: 0
+  - name: Particles
+    uniqueID: 4228542551
+    locked: 0
+  - name: Entities
+    uniqueID: 1006498897
+    locked: 0
   - name: UI
     uniqueID: 3269085551
+    locked: 0
+  - name: Limites
+    uniqueID: 452264279
     locked: 0
