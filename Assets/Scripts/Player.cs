@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public GameObject particlesJump;
     public Animator animator;
 
+    public int puntuation;
+    public int puntuationMultiplier;
+
     float inputMov;
     Rigidbody2D rigidbody_;
     public float speed;
@@ -97,6 +100,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(slip);
         if (inmuneTime > 0)
         {
             inmuneTime -= Time.deltaTime;
@@ -317,6 +321,7 @@ public class Player : MonoBehaviour
 
                 }
                 rigidbody_.AddForce(transform.up * knockbackVerticalForce);
+                puntuationMultiplier -= 5;
             }
         }
     }
@@ -332,6 +337,12 @@ public class Player : MonoBehaviour
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
         facingRight = !facingRight;
+    }
+
+    public void gainPoints(int points)
+    {
+        puntuation += points * puntuationMultiplier;
+        puntuationMultiplier++;
     }
     
 }

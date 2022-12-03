@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6339406774782802646}
   - component: {fileID: 5682302735039184690}
-  - component: {fileID: 8832207445689284747}
   - component: {fileID: -6988709027840168751}
   - component: {fileID: 4576157117395337847}
   - component: {fileID: 884823960485007103}
+  - component: {fileID: 7985235610087271215}
   m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4347772535610534648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.31705427, y: -3.542716, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 80878691
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 5
   m_Sprite: {fileID: -289127050, guid: 3608adecc0b10ba4a9db9797db9546a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -88,20 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8832207445689284747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4347772535610534648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef4340ceaa840b3469a5d65acac1c802, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  ignoresWalls: 0
 --- !u!50 &-6988709027840168751
 Rigidbody2D:
   serializedVersion: 4
@@ -115,9 +101,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 0.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -169,3 +155,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7985235610087271215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347772535610534648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f01c06c19498ed4ab9a433ec11a056d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  ignoresWalls: 1
+  speedUp: 15

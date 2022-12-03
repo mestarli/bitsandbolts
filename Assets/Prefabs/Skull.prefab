@@ -148,5 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   version: 0
+  explosion: {fileID: 0}
+  animator: {fileID: 0}
+  pointsToEarn: 10
   horizontalSpeed: 300
   verticalSpeed: 500

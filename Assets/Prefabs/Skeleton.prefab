@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1481482607746764644}
   - component: {fileID: 3214710735081489630}
   - component: {fileID: 8384818498815261794}
+  - component: {fileID: 7992289459359644860}
   m_Layer: 6
   m_Name: Skeleton
   m_TagString: Untagged
@@ -105,6 +106,7 @@ MonoBehaviour:
   version: 2
   explosion: {fileID: 1274395479995899951, guid: 1c48d6a5c9b84d94db84f4181835a899, type: 3}
   animator: {fileID: 0}
+  pointsToEarn: 20
   range: 10
   speedRoam: 2
   player: {fileID: 0}
@@ -193,3 +195,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &7992289459359644860
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589704350300899045}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.2, y: 0.34}
+  m_Direction: 0

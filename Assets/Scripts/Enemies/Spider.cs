@@ -12,6 +12,7 @@ public class Spider : Enemy
     public float verticalSpeed;
     public LayerMask floor;
     bool onGround;
+    public float gravityScale;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -35,7 +36,7 @@ public class Spider : Enemy
         Vector2 dir = player.transform.position - transform.position;
         if (rigidbody2D_.gravityScale == 0 && !Physics2D.Raycast(transform.position, dir, dir.magnitude, floor))
         {
-            rigidbody2D_.gravityScale = 1;
+            rigidbody2D_.gravityScale = gravityScale;
             transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
         }
         if (rigidbody2D_.gravityScale != 0 && version == 2 && onGround)
@@ -56,8 +57,8 @@ public class Spider : Enemy
         animator.SetTrigger("Jump");
         rigidbody2D_.velocity = new Vector2(0, 0);
         Vector2 direction = player.transform.position - transform.position;
-        int coin = Random.Range(0, 5);
-        if (coin <= 3)
+        int coin = Random.Range(0, 10);
+        if (coin <= 8)
         {
             rigidbody2D_.AddForce(new Vector2(direction.normalized.x * horizontalSpeed, verticalSpeed));
         }

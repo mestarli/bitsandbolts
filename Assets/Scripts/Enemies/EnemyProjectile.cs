@@ -14,12 +14,21 @@ public class EnemyProjectile : MonoBehaviour
         rigidbody2D_ = GetComponent<Rigidbody2D>();
     }
 
+    public Rigidbody2D _rigidbody2d()
+    {
+        return rigidbody2D_;
+    }
+    public Vector2 Direction()
+    {
+        return direction;
+    }
+
     public void Set(Vector2 direction_)
     {
         direction = direction_;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         rigidbody2D_.velocity = direction.normalized * speed;
     }

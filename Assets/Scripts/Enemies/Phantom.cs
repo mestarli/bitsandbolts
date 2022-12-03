@@ -54,8 +54,8 @@ public class Phantom : Enemy
             if (dist.magnitude <= range)
             {
                 range = 100;
-                GameObject bone = (GameObject)Instantiate(projetile, transform.position, new Quaternion(0, 0, 0, 0));
-                bone.GetComponent<EnemyProjectile>().Set(dist);
+                GameObject magic = (GameObject)Instantiate(projetile, transform.position, new Quaternion(0, 0, 0, 0));
+                magic.GetComponent<EnemyProjectile>().Set(dist);
                 StartCoroutine(Teleport());
             }
 
@@ -64,6 +64,7 @@ public class Phantom : Enemy
 
     IEnumerator Teleport()
     {
+        
         teleporting = true;
         Vector2 dist = player.transform.position - transform.position;
         if (dist.magnitude <= range)
@@ -73,13 +74,18 @@ public class Phantom : Enemy
             yield return new WaitForSeconds(1f);
         }
         teleporting = false;
+        if (version == 1)
+        {
+            yield return new WaitForSeconds(2);
+        }
         IA();
     }
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Player>() && version == 2 && !teleporting)
+        if (collision.GetComponent<Player>() && version==2)
         {
-            //da�o jeje
+            Vector2 dir = transform.position - collision.transform.position;
+            collision.GetComponent<Player>().TakeDamage(dir);
         }
     }
 

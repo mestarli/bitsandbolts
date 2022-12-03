@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 80878691
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 5
   m_Sprite: {fileID: 1713856198, guid: 0bfdce4d5099d3346b7cfb5948a41cb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -126,11 +126,13 @@ MonoBehaviour:
   version: 2
   explosion: {fileID: 1274395479995899951, guid: 1c48d6a5c9b84d94db84f4181835a899, type: 3}
   animator: {fileID: 1832272051800350322}
-  horizontalSpeed: 200
-  verticalSpeed: 400
+  pointsToEarn: 15
+  horizontalSpeed: 150
+  verticalSpeed: 300
   floor:
     serializedVersion: 2
     m_Bits: 512
+  gravityScale: 0.5
 --- !u!58 &6209548857529545580
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public int version;
     public GameObject explosion;
     public Animator animator;
-
+    public int pointsToEarn;
     public virtual void TakeDmg(int dmg)
     {
         hp -= dmg;
@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
 
     public virtual void Die()
     {
+        Player _player = FindObjectOfType<Player>();
+        _player.gainPoints(pointsToEarn);
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }
