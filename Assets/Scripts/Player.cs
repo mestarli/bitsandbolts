@@ -15,6 +15,11 @@ public class Player : MonoBehaviour
     public int puntuation;
     public int puntuationMultiplier;
 
+    public GameObject respawn;
+    public bool respawning;
+    int lives = 3;
+    public GameObject _hitbox;
+
     float inputMov;
     Rigidbody2D rigidbody_;
     public float speed;
@@ -62,6 +67,7 @@ public class Player : MonoBehaviour
         checker = transform.GetChild(0);
         canAttack = true;
         topAttack = false;
+        _hitbox = transform.GetChild(2).gameObject;
 
         try
         {
@@ -100,7 +106,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(slip);
+        if (respawning)
+        {
+            rigidbody_.gravityScale = 0.03f;
+            _hitbox.SetActive(false);
+        }
+        else
+        {
+            rigidbody_.gravityScale = 1;
+            _hitbox.SetActive(true);
+        }
         if (inmuneTime > 0)
         {
             inmuneTime -= Time.deltaTime;
@@ -265,6 +280,7 @@ public class Player : MonoBehaviour
     }
     void Jump()
     {
+        respawning = false;
         animator.SetTrigger("Jump_02");
         rigidbody_.velocity = new Vector2(rigidbody_.velocity.x, 0);
        
@@ -293,7 +309,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(Vector2 dir)
     {
-        if (inmuneTime <= 0)
+        if (inmuneTime <= 0 && !respawning)
         {
             if (knockback == 0)
             {
@@ -328,7 +344,17 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        SceneManager.LoadScene("GameOver");
+        if (lives > 0)
+        {
+            lives--;
+            life = 3;
+            respawning = true;
+            transform.position = respawn.transform.position;
+        }
+        else
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
     
     void Flip()
