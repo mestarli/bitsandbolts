@@ -21,7 +21,7 @@ public class Bat : Enemy
         }
         catch (Exception e)
         {
-            version = 1;
+            version = 2;
             Console.WriteLine(e);
         }
         
