@@ -61,6 +61,10 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private Transform weaponPoint;
     [SerializeField] private GameObject[] weapons;
+    
+    [SerializeField] private GameObject vidasUI;
+    [SerializeField] private GameObject puntuacionUI;
+    [SerializeField] private GameObject multiplicadorUI;
     private void Awake()
     {
         rigidbody_ = GetComponent<Rigidbody2D>();
@@ -340,6 +344,7 @@ public class Player : MonoBehaviour
                 }
                 rigidbody_.AddForce(transform.up * knockbackVerticalForce);
                 puntuationMultiplier -= 5;
+                multiplicadorUI.GetComponent<TextMeshProUGUI>().text = puntuationMultiplier.ToString();
             }
         }
     }
@@ -349,6 +354,7 @@ public class Player : MonoBehaviour
         if (lives > 0)
         {
             lives--;
+            vidasUI.transform.GetChild(life).gameObject.SetActive(false);
             life = 3;
             respawning = true;
             transform.position = respawn.transform.position;
@@ -371,6 +377,8 @@ public class Player : MonoBehaviour
     {
         puntuation += points * puntuationMultiplier;
         puntuationMultiplier++;
+        multiplicadorUI.GetComponent<TextMeshProUGUI>().text = puntuationMultiplier.ToString();
+        puntuacionUI.GetComponent<TextMeshProUGUI>().text = puntuation.ToString("0000000000000000");
     }
     
 }
