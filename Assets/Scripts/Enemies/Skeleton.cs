@@ -40,6 +40,7 @@ public class Skeleton : Enemy
         {
             rigidbody2D_.velocity = transform.right * speedRoam;
             AudioManager.Instance.PlaySong("bote-calavera");
+            animator.SetBool("HeadLess",true);
         }
     }
 
@@ -48,7 +49,7 @@ public class Skeleton : Enemy
         if (version == 1)
         {
             Vector2 dist = player.transform.position - transform.position;
-            if(dist.magnitude <= range && transform.position.y > player.transform.position.y)
+            if(dist.magnitude <= range && transform.position.y >= player.transform.position.y)
             {
                 animator.SetTrigger("Shoot");
             }
