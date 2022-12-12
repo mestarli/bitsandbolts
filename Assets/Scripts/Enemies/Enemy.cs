@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     public virtual void Die()
     {
         Player _player = FindObjectOfType<Player>();
-        _player.gainPoints(pointsToEarn);
+        _player.GainPoints(pointsToEarn);
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }

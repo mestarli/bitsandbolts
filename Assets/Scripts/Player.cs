@@ -365,7 +365,7 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
     }
 
-    public void gainPoints(int points)
+    public void GainPoints(int points)
     {
         puntuation += points * puntuationMultiplier;
         puntuationMultiplier++;
