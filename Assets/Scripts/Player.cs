@@ -110,11 +110,13 @@ public class Player : MonoBehaviour
         {
             rigidbody_.gravityScale = 0.03f;
             _hitbox.SetActive(false);
+            animator.SetBool("Respawning", true);
         }
         else
         {
             rigidbody_.gravityScale = 1;
             _hitbox.SetActive(true);
+            animator.SetBool("Respawning", false);
         }
         if (inmuneTime > 0)
         {
@@ -162,13 +164,11 @@ public class Player : MonoBehaviour
             }
             inGround = false;
             Jump();
+
+
         }
 
-        if (doubleJump == 0)
-        {
-            Debug.Log(doubleJump);
-            //animator.SetTrigger("Jump_02");
-        }
+        
         
        /* else if(Input.GetKeyDown(KeyCode.Space) && doubleJump > 0)
         {
@@ -179,8 +179,11 @@ public class Player : MonoBehaviour
         {
             StopJump();
         }
-        
-        inGround = Physics2D.OverlapCircle(checker.position, radiusChecker, layerMaskGround);
+
+        if (!Input.GetKey(KeyCode.Space))
+        {
+            inGround = Physics2D.OverlapCircle(checker.position, radiusChecker, layerMaskGround);
+        }
 
         if (inGround)
         {
@@ -278,31 +281,30 @@ public class Player : MonoBehaviour
         }
 
     }
+    public void AnimatorStopJumpFalse()
+    {
+
+
+        animator.SetBool("StopJump", false);
+    }
     void Jump()
     {
+        inGround = false;
+        animator.SetBool("StopJump", false);
+        animator.SetTrigger("Jump");
         respawning = false;
-        animator.SetTrigger("Jump_02");
         rigidbody_.velocity = new Vector2(rigidbody_.velocity.x, 0);
        
         AudioManager.Instance.PlaySong("jump");
         Instantiate(particlesJump, transform.position - new Vector3(0,0.7f,0), transform.rotation);
         rigidbody_.AddForce(new Vector2(0, jumpForce));
        
-    }void FirstJump()
-    {
-        Jump();
-       
-    }
-    void DoubleJump()
-    {
-        Jump();
-       
     }
     void StopJump()
     {
-        animator.SetTrigger("StopJump");
         if (goingUp && !inGround)
         {
+            animator.SetBool("StopJump", true);
             rigidbody_.velocity = new Vector2(rigidbody_.velocity.x, rigidbody_.velocity.y/1.5f);
         }
     }
