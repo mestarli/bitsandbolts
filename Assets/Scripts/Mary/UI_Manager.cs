@@ -88,6 +88,28 @@ public class UI_Manager : MonoBehaviour
         selector.transform.GetChild(1).gameObject.SetActive(!selector.transform.GetChild(1).gameObject.active);
     }
 
+    public void BackPanel(int level)
+    {
+        switch (level)
+        {
+            case 1:
+                panel_developer.SetActive(true);
+                panel_modeler.SetActive(false);
+                break;
+            case 2:
+                panel_modeler.SetActive(true);
+                panel_texture.SetActive(false);
+                break;
+            case 3:
+                panel_texture.SetActive(true);
+                panel_animation.SetActive(false);
+                break;
+            case 4:
+                panel_animation.SetActive(true);
+                panel_controles.SetActive(false);
+                break;
+        }
+    }
     public void ChangePanel(int level)
     {
         AudioManager.Instance.PlaySong("btn_click");
