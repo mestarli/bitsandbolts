@@ -16,6 +16,7 @@ public class Boss2 : Enemy
     public GameObject Bat;
     Animator animator;
     public float speed;
+    public bool active=false;
     private void Awake()
     {
         player = FindObjectOfType<Player>();
@@ -23,7 +24,6 @@ public class Boss2 : Enemy
         swordPoint = transform.GetChild(0).gameObject;
         sword = swordPoint.transform.GetChild(0).gameObject;
         animator = GetComponent<Animator>();
-        StartCoroutine(IA());
     }
 
     
@@ -31,25 +31,28 @@ public class Boss2 : Enemy
 
     private void Update()
     {
-        Vector2 dir = new Vector2(player.transform.position.x, transform.position.y) - new Vector2(transform.position.x, transform.position.y);
-        
-        if(player.transform.position.x - transform.position.x > 0)
+        if (active)
         {
-            rigidbody2d.velocity = new Vector2(dir.magnitude * vel, 0);
-        }
-        else 
-        {
-            rigidbody2d.velocity = new Vector2(-dir.magnitude * vel, 0);
-        }
+            Vector2 dir = new Vector2(player.transform.position.x, transform.position.y) - new Vector2(transform.position.x, transform.position.y);
 
-        if (lookat)
-        {
-            Vector2 dir2 = player.transform.position - transform.position;
-            sword.transform.up = dir2;
+            if (player.transform.position.x - transform.position.x > 0)
+            {
+                rigidbody2d.velocity = new Vector2(dir.magnitude * vel, 0);
+            }
+            else
+            {
+                rigidbody2d.velocity = new Vector2(-dir.magnitude * vel, 0);
+            }
+
+            if (lookat)
+            {
+                Vector2 dir2 = player.transform.position - transform.position;
+                sword.transform.up = dir2;
+            }
         }
     }
 
-    IEnumerator IA()
+    public IEnumerator IA()
     {
         yield return new WaitForSeconds(4);
         int dice = Random.Range(0, 5);
@@ -61,6 +64,7 @@ public class Boss2 : Enemy
         {
             SpawnBat();
         }
+
         StartCoroutine(IA());
     }
 
@@ -87,25 +91,34 @@ public class Boss2 : Enemy
         sword.transform.parent = null;
         Vector3 pos = player.transform.position;
         Vector3 dir = pos - sword.transform.position;
-        while (dir.magnitude > 0.5f)
+        while (dir.magnitude > 5f)
         {
+            Debug.Log(sword.GetComponent<Rigidbody2D>().velocity + " / " + dir.magnitude);
             sword.GetComponent<Rigidbody2D>().velocity = dir.normalized * speed; 
             dir = pos - sword.transform.position;
             yield return null;
         }
+
+        sword.GetComponent<Rigidbody2D>().velocity = dir.normalized * speed;
+        yield return null;
+        sword.GetComponent<Rigidbody2D>().velocity = dir.normalized * speed;
+        yield return null;
+        sword.GetComponent<Rigidbody2D>().velocity = dir.normalized * speed;
+        yield return null;
         sword.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
     }
 
     IEnumerator ReturnSword()
     {
         Vector3 dir = swordPoint.transform.position - sword.transform.position;
-        while (dir.magnitude > 0.5f)
+        while (dir.magnitude > 2f)
         {
             sword.GetComponent<Rigidbody2D>().velocity = dir.normalized*speed*2;
             dir = swordPoint.transform.position - sword.transform.position;
             yield return null;
         }
         sword.transform.parent = swordPoint.transform;
+        sword.transform.localPosition = new Vector2(0, 0);
         sword.GetComponent<Rigidbody2D>().bodyType = UnityEngine.RigidbodyType2D.Kinematic;
     }
 

@@ -35,6 +35,7 @@ public class Skull : Enemy
         base.OnTriggerEnter2D(collision);
         if (collision.gameObject.CompareTag("Floor"))
         {
+            AudioManager.Instance.PlaySong("bote-calavera");
             Jump();
         }
     }
