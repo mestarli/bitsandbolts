@@ -57,6 +57,15 @@ public class UIGame : MonoBehaviour
        Life[heartPosition].transform.GetChild(0).gameObject.SetActive(false);
        Life[heartPosition].transform.GetChild(1).gameObject.SetActive(true);
    }
+   public void RestartLife()
+   {
+       Life[0].transform.GetChild(0).gameObject.SetActive(true);
+       Life[0].transform.GetChild(1).gameObject.SetActive(false);
+       Life[1].transform.GetChild(0).gameObject.SetActive(true);
+       Life[1].transform.GetChild(1).gameObject.SetActive(false);
+       Life[2].transform.GetChild(0).gameObject.SetActive(true);
+       Life[2].transform.GetChild(1).gameObject.SetActive(false);
+   }
 
     public void UpdateWeapon(int weaponPosition)
     {

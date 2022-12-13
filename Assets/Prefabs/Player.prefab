@@ -191,6 +191,9 @@ MonoBehaviour:
   - {fileID: 1317338492472268772, guid: 8603defd8342547468ace6788b9d4360, type: 3}
   - {fileID: 670643733769089727, guid: 816a5b6c7a4b66648b220df1ff36247f, type: 3}
   - {fileID: 5774771044501376170, guid: 8d3b9a8aa355ec24684f2f2350f5fe45, type: 3}
+  vidasUI: {fileID: 0}
+  puntuacionUI: {fileID: 0}
+  multiplicadorUI: {fileID: 0}
 --- !u!95 &397965147372745483
 Animator:
   serializedVersion: 4
