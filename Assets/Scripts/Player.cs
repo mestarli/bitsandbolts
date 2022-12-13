@@ -115,6 +115,7 @@ public class Player : MonoBehaviour
             rigidbody_.gravityScale = 0.03f;
             _hitbox.SetActive(false);
             animator.SetBool("Respawning", true);
+            UIGame.instance.RestartLife();
         }
         else
         {
