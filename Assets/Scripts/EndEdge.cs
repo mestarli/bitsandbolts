@@ -21,7 +21,7 @@ public class EndEdge : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.4f);
-        player.transform.GetChild(2).GetComponent<CapsuleCollider2D>().enabled =true;
+        player.gameObject.transform.GetChild(2).GetComponent<CapsuleCollider2D>().enabled =true;
         player.Die();
 
     }

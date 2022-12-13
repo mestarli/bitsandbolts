@@ -345,6 +345,10 @@ public class Player : MonoBehaviour
                 }
                 rigidbody_.AddForce(transform.up * knockbackVerticalForce);
                 puntuationMultiplier -= 5;
+                if(puntuationMultiplier < 0)
+                {
+                    puntuationMultiplier = 0;
+                }
                 multiplicadorUI.GetComponent<TextMeshProUGUI>().text = puntuationMultiplier.ToString();
             }
         }
