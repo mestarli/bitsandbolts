@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss_01 : MonoBehaviour
 {
@@ -20,13 +21,12 @@ public class Boss_01 : MonoBehaviour
     [SerializeField] private GameObject fireBall;
     [SerializeField] private GameObject fireWall;
     
-    [SerializeField] private GameObject ActivateFinish;
     
     private bool isAttacking = false;
     void Start()
     {
-        life_head_01 = 75;
-        life_head_02 = 75;
+        life_head_01 = 80;
+        life_head_02 = 80;
         head_01.SetActive(true);
         head_02.SetActive(false);
         speed = 2f;
@@ -46,23 +46,8 @@ public class Boss_01 : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 dir = new Vector2(transform.position.x, playerReference.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
- 
-        if (transform.localPosition.y > 0.6f && transform.localPosition.y < 0.7f)
-        {
-            isArrive = true;
-        }
-        if (transform.localPosition.y < -0.2f && transform.localPosition.y > -0.3f)
-        {
-            isArrive = false;
-        }
-        if(!isArrive)
-        {
-            _rigidbody2D.velocity = new Vector2(0, dir.magnitude * speed);
-        }
-        if(isArrive)
-        {
-            _rigidbody2D.velocity = new Vector2(0, -dir.magnitude * speed);
-        }
+
+       
 
     }
 
@@ -73,7 +58,7 @@ public class Boss_01 : MonoBehaviour
             life_head_01 -= damage;
         }
 
-        if (life_head_01 <= 0)
+        if (life_head_01 <= life_head_01 / 2)
         {
             head_02.SetActive(true);
         }
@@ -85,9 +70,17 @@ public class Boss_01 : MonoBehaviour
 
         if (life_head_01 <= 0 && life_head_02 <= 0)
         {
-            ActivateFinish.SetActive(true);
-            Destroy(gameObject);
+            StartCoroutine(ChangeLevel());
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            gameObject.transform.GetChild(1).gameObject.SetActive(false);
+
         }
+    }
+
+    IEnumerator ChangeLevel()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Level_02");
     }
     
     IEnumerator Attack()
