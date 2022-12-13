@@ -17,6 +17,8 @@ public class Boss2 : Enemy
     Animator animator;
     public float speed;
     public bool active=false;
+    public PlatformEffector2D plat1;
+    public PlatformEffector2D plat2;
     private void Awake()
     {
         player = FindObjectOfType<Player>();
@@ -126,5 +128,13 @@ public class Boss2 : Enemy
     {
         GameObject spawner = batSpawners[Random.Range(0, batSpawners.Count - 1)];
         Instantiate(Bat, spawner.transform.position, spawner.transform.rotation);
+
+    }
+
+    public override void Die()
+    {
+        plat1.enabled = true;
+        plat2.enabled = true;
+        base.Die();
     }
 }
