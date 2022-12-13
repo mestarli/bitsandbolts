@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIGame : MonoBehaviour
 {
@@ -75,5 +76,15 @@ public class UIGame : MonoBehaviour
             weapon.SetActive(false);   
         }
         WeaponSelected[weaponPosition].SetActive(true);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 }
