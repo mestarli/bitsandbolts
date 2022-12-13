@@ -197,9 +197,9 @@ public class Weapon : MonoBehaviour
         {
             collision.GetComponent<Enemy>().TakeDmg(damage);
         }
-        if (collision.GetComponent<Boss_01>())
+        if (collision.transform.GetComponentInParent<Boss_01>())
         {
-            collision.GetComponent<Boss_01>().TakeDamage(damage);
+            collision.transform.GetComponentInParent<Boss_01>().TakeDamage(damage);
         }
         if (collision.GetComponent<Player>() && returning)
         {
