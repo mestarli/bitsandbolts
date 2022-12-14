@@ -200,11 +200,6 @@ public class Player : MonoBehaviour
         lastPosition = transform.position.y;
         
         
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            SceneManager.LoadScene("OscarScene");
-        }
-        
         //Press q for change weapon
         if (Input.GetKeyDown(KeyCode.Q) && canAttack)
         {
