@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         float dist = objecToFollow.transform.position.y - transform.position.y;
-        if(dist > upMaxDistance  || dist < -downMaxDistance)
+        if((dist > upMaxDistance  || dist < -downMaxDistance) && !player.respawning)
         {
             transform.Translate(transform.up * cameraSpeed *dist* Time.deltaTime);
         }

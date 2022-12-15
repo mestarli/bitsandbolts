@@ -39,7 +39,8 @@ public class Bat : Enemy
         }
         else if (version == 2)
         {
-            direction = new Vector2((driverX * speedV)+speed/2, driver * speedV);
+            speed = 1;
+            direction = new Vector2((driverX * speedV)+speed, driver * speedV);
 
         }
         rigidbody2D_.velocity = direction;

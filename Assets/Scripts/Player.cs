@@ -12,12 +12,12 @@ public class Player : MonoBehaviour
     public GameObject particlesJump;
     public Animator animator;
 
-    public int puntuation;
-    public int puntuationMultiplier;
+    public static int puntuation;
+    public static int puntuationMultiplier;
 
     public GameObject respawn;
     public bool respawning;
-    int lives = 3;
+    static int lives = 3;
     public GameObject _hitbox;
 
     float inputMov;
@@ -358,6 +358,7 @@ public class Player : MonoBehaviour
             life = 3;
             respawning = true;
             transform.position = respawn.transform.position;
+            rigidbody_.velocity = Vector2.zero;
         }
         else
         {
@@ -380,5 +381,12 @@ public class Player : MonoBehaviour
         multiplicadorUI.GetComponent<TextMeshProUGUI>().text = puntuationMultiplier.ToString();
         puntuacionUI.GetComponent<TextMeshProUGUI>().text = puntuation.ToString("0000000000000000");
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("MainCamera") && respawning)
+        {
+            Jump();
+        }
+    }
 }

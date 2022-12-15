@@ -150,6 +150,6 @@ MonoBehaviour:
   version: 0
   explosion: {fileID: 1274395479995899951, guid: 1c48d6a5c9b84d94db84f4181835a899, type: 3}
   animator: {fileID: 0}
-  pointsToEarn: 10
+  pointsToEarn: 148
   horizontalSpeed: 200
   verticalSpeed: 850
