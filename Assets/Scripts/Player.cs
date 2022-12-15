@@ -238,6 +238,23 @@ public class Player : MonoBehaviour
         {
             animator.SetTrigger("Attack");
             canAttack = false;
+            
+            // Para evitar el delay en el ataque
+            switch(positionActiveWeapon) 
+            {
+                case 0:
+                    AudioManager.Instance.PlaySong("lanzar-hacha");
+                    break;
+                case 1:
+                    AudioManager.Instance.PlaySong("lanzar-daga");
+                    break;
+                case 2:
+                    AudioManager.Instance.PlaySong("lanzar-boomerang");
+                    break;
+                default:
+                    // code block
+                    break;
+            }
             GameObject weapon = Instantiate(weapons[positionActiveWeapon], weaponPoint.position, Quaternion.identity);
             if (positionActiveWeapon == 1 && facingRight)
             {
