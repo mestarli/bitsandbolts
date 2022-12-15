@@ -229,6 +229,19 @@ public class Player : MonoBehaviour
         if(positionActiveWeapon!=1 &&  topAttack && Input.GetMouseButtonDown(0) && canAttack)
         {
             animator.SetTrigger("Attack");
+            // Para evitar el delay en el ataque
+            switch(positionActiveWeapon) 
+            {
+                case 0:
+                    AudioManager.Instance.PlaySong("lanzar-hacha");
+                    break;
+                case 1:
+                    AudioManager.Instance.PlaySong("lanzar-daga");
+                    break;
+                case 2:
+                    AudioManager.Instance.PlaySong("lanzar-boomerang");
+                    break;
+            }
             canAttack = false;
             //ContentWeapon.transform.localPosition = topPositionWeapons;
             GameObject weapon = Instantiate(weapons[positionActiveWeapon], topPositionWeapons.transform.position, Quaternion.identity);
@@ -250,9 +263,6 @@ public class Player : MonoBehaviour
                     break;
                 case 2:
                     AudioManager.Instance.PlaySong("lanzar-boomerang");
-                    break;
-                default:
-                    // code block
                     break;
             }
             GameObject weapon = Instantiate(weapons[positionActiveWeapon], weaponPoint.position, Quaternion.identity);
