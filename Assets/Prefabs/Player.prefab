@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 1006498897
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -188557417, guid: 7ce21048cab63904ab675aab445558df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c926f3ece582fc43a0eb985dc484069, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -159,8 +159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlesJump: {fileID: 4246907989980071804, guid: 959f93be7471ace4380516b65d446de0, type: 3}
   animator: {fileID: 397965147372745483}
-  puntuation: 0
-  puntuationMultiplier: 0
   respawn: {fileID: 0}
   respawning: 0
   _hitbox: {fileID: 0}
