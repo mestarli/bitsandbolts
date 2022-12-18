@@ -12,8 +12,9 @@ public class Bat : Enemy
     public float driver;
     public float driverX;
     bool driverXActivated;
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         try
         {

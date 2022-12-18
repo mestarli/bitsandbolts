@@ -13,8 +13,9 @@ public class Skeleton : Enemy
     public GameObject skull;
     Rigidbody2D rigidbody2D_;
 
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         animator = GetComponent<Animator>();
         player = FindObjectOfType<Player>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();

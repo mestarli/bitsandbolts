@@ -20,9 +20,15 @@ public class Boss_01 : MonoBehaviour
     [SerializeField] private Transform pointToFire;
     [SerializeField] private GameObject fireBall;
     [SerializeField] private GameObject fireWall;
+
+    SpriteRenderer spriteRenderer;
     
     
     private bool isAttacking = false;
+    public virtual void Awake()
+    {
+        spriteRenderer = transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+    }
     void Start()
     {
         life_head_01 = 80;
@@ -75,6 +81,8 @@ public class Boss_01 : MonoBehaviour
             gameObject.transform.GetChild(1).gameObject.SetActive(false);
 
         }
+
+        StartCoroutine(DamageFeedback());
     }
 
     IEnumerator ChangeLevel()
@@ -110,5 +118,21 @@ public class Boss_01 : MonoBehaviour
         Vector3 positionWall = new Vector3(0.9274117f,64.35f,0f);
         Instantiate(fireWall, positionWall, Quaternion.identity);
 
+    }
+
+    IEnumerator DamageFeedback()
+    {
+        spriteRenderer.color = new Color32(255, 255, 255, 0);
+        yield return new WaitForSeconds(0.07f);
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
+        yield return new WaitForSeconds(0.07f);
+        spriteRenderer.color = new Color32(255, 255, 255, 0);
+        yield return new WaitForSeconds(0.07f);
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
+        yield return new WaitForSeconds(0.07f);
+        spriteRenderer.color = new Color32(255, 255, 255, 0);
+        yield return new WaitForSeconds(0.07f);
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
+        yield return new WaitForSeconds(0.07f);
     }
 }

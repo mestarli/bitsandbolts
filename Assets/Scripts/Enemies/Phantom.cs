@@ -15,8 +15,9 @@ public class Phantom : Enemy
     Rigidbody2D rigidbody2D_;
     bool teleporting;
 
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         player = FindObjectOfType<Player>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         try

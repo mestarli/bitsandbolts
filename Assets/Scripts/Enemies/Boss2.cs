@@ -19,8 +19,9 @@ public class Boss2 : Enemy
     public bool active=false;
     public PlatformEffector2D plat1;
     public PlatformEffector2D plat2;
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         player = FindObjectOfType<Player>();
         rigidbody2d=GetComponent<Rigidbody2D>();
         swordPoint = transform.GetChild(0).gameObject;
@@ -57,8 +58,8 @@ public class Boss2 : Enemy
     public IEnumerator IA()
     {
         yield return new WaitForSeconds(4);
-        int dice = Random.Range(0, 5);
-        if(dice <= 3)
+        int dice = Random.Range(0, 3);
+        if(dice <= 1)
         {
             StartThrowSword();
         }

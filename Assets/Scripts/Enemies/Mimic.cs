@@ -8,8 +8,9 @@ public class Mimic : Enemy
     Player player;
     public float horizontalSpeed;
     public float verticalSpeed;
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
     }

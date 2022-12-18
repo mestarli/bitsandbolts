@@ -9,6 +9,12 @@ public class Enemy : MonoBehaviour
     public GameObject explosion;
     public Animator animator;
     public int pointsToEarn;
+    SpriteRenderer spriteRenderer;
+
+    public virtual void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     public virtual void TakeDmg(int dmg)
     {
         hp -= dmg;
@@ -17,6 +23,7 @@ public class Enemy : MonoBehaviour
             
             Die();
         }
+        StartCoroutine(DamageFeedback());
     }
 
     public virtual void Die()
@@ -34,5 +41,21 @@ public class Enemy : MonoBehaviour
             Vector2 dir = transform.position - collision.transform.position;
             collision.GetComponent<Player>().TakeDamage(dir);
         }
+    }
+
+    IEnumerator DamageFeedback()
+    {
+        spriteRenderer.color = new Color32(255, 255, 255, 0);
+        yield return new WaitForSeconds(0.07f);
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
+        yield return new WaitForSeconds(0.07f);
+        spriteRenderer.color = new Color32(255, 255, 255, 0);
+        yield return new WaitForSeconds(0.07f);
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
+        yield return new WaitForSeconds(0.07f);
+        spriteRenderer.color = new Color32(255, 255, 255, 0);
+        yield return new WaitForSeconds(0.07f);
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
+        yield return new WaitForSeconds(0.07f);
     }
 }

@@ -14,8 +14,9 @@ public class Spider : Enemy
     bool onGround;
     public float gravityScale;
     // Start is called before the first frame update
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
 
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();

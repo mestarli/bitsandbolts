@@ -9,8 +9,9 @@ public class Skull : Enemy
     public float horizontalSpeed;
     public float verticalSpeed;
 
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         direction = -transform.right + transform.up;
     }
