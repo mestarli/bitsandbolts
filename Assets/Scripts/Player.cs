@@ -113,6 +113,9 @@ public class Player : MonoBehaviour
     void Start(){
         multiplicadorUI.GetComponent<TextMeshProUGUI>().text = puntuationMultiplier.ToString();
         puntuacionUI.GetComponent<TextMeshProUGUI>().text = puntuation.ToString("0000000000000000");
+        UIGame.instance.UpdateLifeScenes(life);
+        updateVidas();
+
     }
 // Update is called once per frame
 void Update()
@@ -423,5 +426,30 @@ void Update()
         {
             Jump();
         }
+    }
+
+    private void updateVidas()
+    {
+        
+       
+        switch (lives)
+        {
+            case 1:
+                vidasUI.transform.GetChild(0).gameObject.SetActive(true);
+                vidasUI.transform.GetChild(1).gameObject.SetActive(false);
+                vidasUI.transform.GetChild(2).gameObject.SetActive(false);
+                break;
+            case 2:
+                vidasUI.transform.GetChild(0).gameObject.SetActive(true);
+                vidasUI.transform.GetChild(1).gameObject.SetActive(true);
+                vidasUI.transform.GetChild(2).gameObject.SetActive(false);
+                break;
+            case 3:
+                vidasUI.transform.GetChild(0).gameObject.SetActive(true);
+                vidasUI.transform.GetChild(1).gameObject.SetActive(true);
+                vidasUI.transform.GetChild(2).gameObject.SetActive(true);
+                break;
+        }
+
     }
 }

@@ -67,7 +67,37 @@ public class UIGame : MonoBehaviour
        Life[2].transform.GetChild(0).gameObject.SetActive(true);
        Life[2].transform.GetChild(1).gameObject.SetActive(false);
    }
-
+    
+   public void UpdateLifeScenes(int totalHearts)
+   {
+       switch (totalHearts)
+       {
+           case 1:
+               Life[0].transform.GetChild(0).gameObject.SetActive(true);
+               Life[0].transform.GetChild(1).gameObject.SetActive(false);
+               Life[1].transform.GetChild(0).gameObject.SetActive(false);
+               Life[1].transform.GetChild(1).gameObject.SetActive(true);
+               Life[2].transform.GetChild(0).gameObject.SetActive(false);
+               Life[2].transform.GetChild(1).gameObject.SetActive(true);
+               break;
+           case 2:
+               Life[0].transform.GetChild(0).gameObject.SetActive(true);
+               Life[0].transform.GetChild(1).gameObject.SetActive(false);
+               Life[1].transform.GetChild(0).gameObject.SetActive(true);
+               Life[1].transform.GetChild(1).gameObject.SetActive(false);
+               Life[2].transform.GetChild(0).gameObject.SetActive(false);
+               Life[2].transform.GetChild(1).gameObject.SetActive(true);
+               break;
+           case 3:
+               Life[0].transform.GetChild(0).gameObject.SetActive(true);
+               Life[0].transform.GetChild(1).gameObject.SetActive(false);
+               Life[1].transform.GetChild(0).gameObject.SetActive(true);
+               Life[1].transform.GetChild(1).gameObject.SetActive(false);
+               Life[2].transform.GetChild(0).gameObject.SetActive(true);
+               Life[2].transform.GetChild(1).gameObject.SetActive(false);
+               break;
+       }
+   }
     public void UpdateWeapon(int weaponPosition)
     {
         
