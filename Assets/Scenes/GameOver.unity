@@ -567,7 +567,7 @@ MonoBehaviour:
     loop: 1
     audioSource: {fileID: 0}
   - name: btn_click
-    audioClip: {fileID: 8300000, guid: 3ced504c40286a845a4fb0a30f313e53, type: 3}
+    audioClip: {fileID: 8300000, guid: c351e52e8832fe44b885378f25235b7a, type: 3}
     volume: 0.52
     pitch: 0
     playOnAwake: 0
