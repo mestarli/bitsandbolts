@@ -7446,7 +7446,7 @@ PrefabInstance:
     - target: {fileID: 6787652234810582793, guid: 36fbe16cd33a8c645985a43495dc84d5, type: 3}
       propertyPath: listSounds.Array.data[17].audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: dc18e453554c4bf4e8ecd8b287c6415f, type: 3}
+      objectReference: {fileID: 8300000, guid: 8d3631667e817f8459c7528dfb98a2d3, type: 3}
     - target: {fileID: 6787652234810582793, guid: 36fbe16cd33a8c645985a43495dc84d5, type: 3}
       propertyPath: listSounds.Array.data[18].audioClip
       value: 
@@ -13060,6 +13060,10 @@ PrefabInstance:
     - target: {fileID: 6190791500711649993, guid: 854dcb3571461e44f9f95e3b07827dd4, type: 3}
       propertyPath: m_Name
       value: BossContent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190791500711649993, guid: 854dcb3571461e44f9f95e3b07827dd4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6190791500711649998, guid: 854dcb3571461e44f9f95e3b07827dd4, type: 3}
       propertyPath: m_RootOrder
