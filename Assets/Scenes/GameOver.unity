@@ -562,14 +562,14 @@ MonoBehaviour:
   - name: game-over
     audioClip: {fileID: 8300000, guid: 480fc77fe759f75478189eb0ed07aab8, type: 3}
     volume: 0.52
-    pitch: 0
+    pitch: 1
     playOnAwake: 1
     loop: 1
     audioSource: {fileID: 0}
   - name: btn_click
     audioClip: {fileID: 8300000, guid: c351e52e8832fe44b885378f25235b7a, type: 3}
     volume: 0.52
-    pitch: 0
+    pitch: 1
     playOnAwake: 0
     loop: 0
     audioSource: {fileID: 0}
