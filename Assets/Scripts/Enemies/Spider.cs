@@ -55,6 +55,8 @@ public class Spider : Enemy
     }
     void Jump()
     {
+
+        AudioManager.Instance.PlaySong("salto-aranya");
         animator.SetTrigger("Jump");
         rigidbody2D_.velocity = new Vector2(0, 0);
         Vector2 direction = player.transform.position - transform.position;
