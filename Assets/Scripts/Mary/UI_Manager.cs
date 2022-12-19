@@ -84,12 +84,14 @@ public class UI_Manager : MonoBehaviour
 
     public void ChangeSelector(GameObject selector)
     {
+        AudioManager.Instance.PlaySong("btn_click");
         selector.transform.GetChild(0).gameObject.SetActive(!selector.transform.GetChild(0).gameObject.active);
         selector.transform.GetChild(1).gameObject.SetActive(!selector.transform.GetChild(1).gameObject.active);
     }
 
     public void BackPanel(int level)
     {
+        AudioManager.Instance.PlaySong("btn_click");
         switch (level)
         {
             case 1:
