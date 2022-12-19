@@ -28,6 +28,7 @@ public class Skull : Enemy
     }
     void Jump()
     {
+        AudioManager.Instance.PlaySong("bote-calavera");
         rigidbody2D_.velocity = new Vector2(0, 0);
         rigidbody2D_.AddForce(new Vector2(direction.normalized.x * horizontalSpeed, direction.normalized.y * verticalSpeed));
     }
