@@ -58,6 +58,7 @@ public class Phantom : Enemy
                 GameObject magic = (GameObject)Instantiate(projetile, transform.position, new Quaternion(0, 0, 0, 0));
                 magic.GetComponent<EnemyProjectile>().Set(dist);
                 StartCoroutine(Teleport());
+                AudioManager.Instance.PlaySong("bola-energia");
             }
 
         }

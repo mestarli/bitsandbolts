@@ -385,6 +385,7 @@ void Update()
 
     public void Die()
     {
+        AudioManager.Instance.PlaySong("muerte-player");
         if (lives > 0)
         {
             lives--;
