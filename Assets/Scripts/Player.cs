@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public Animator animator;
 
     public static int puntuation;
-    public static int puntuationMultiplier;
+    public static int puntuationMultiplier=1;
 
     public GameObject respawn;
     public bool respawning;
@@ -105,12 +105,17 @@ public class Player : MonoBehaviour
         {
             Console.WriteLine(e);
         }
-          
 
+
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start(){
+        multiplicadorUI.GetComponent<TextMeshProUGUI>().text = puntuationMultiplier.ToString();
+        puntuacionUI.GetComponent<TextMeshProUGUI>().text = puntuation.ToString("0000000000000000");
+    }
+// Update is called once per frame
+void Update()
     {
         if (respawning)
         {
@@ -369,9 +374,9 @@ public class Player : MonoBehaviour
                 }
                 rigidbody_.AddForce(transform.up * knockbackVerticalForce);
                 puntuationMultiplier -= 5;
-                if(puntuationMultiplier < 0)
+                if(puntuationMultiplier < 1)
                 {
-                    puntuationMultiplier = 0;
+                    puntuationMultiplier = 1;
                 }
                 multiplicadorUI.GetComponent<TextMeshProUGUI>().text = puntuationMultiplier.ToString();
             }
