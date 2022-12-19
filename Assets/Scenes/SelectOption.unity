@@ -5542,14 +5542,14 @@ MonoBehaviour:
   - name: bg-music
     audioClip: {fileID: 8300000, guid: ecc4aa1ec7f02d84d99c98cdf61c4cef, type: 3}
     volume: 0.52
-    pitch: 0
+    pitch: 1
     playOnAwake: 1
     loop: 1
     audioSource: {fileID: 0}
   - name: btn_click
     audioClip: {fileID: 8300000, guid: c351e52e8832fe44b885378f25235b7a, type: 3}
     volume: 0.52
-    pitch: 0
+    pitch: 1
     playOnAwake: 0
     loop: 0
     audioSource: {fileID: 0}
