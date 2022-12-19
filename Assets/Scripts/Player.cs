@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     public GameObject respawn;
     public bool respawning;
-    static int lives = 3;
+    private static int lives = 3;
     public GameObject _hitbox;
 
     float inputMov;
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 
     public bool facingRight = true;
     
-    [SerializeField] private int life = 3;
+    [SerializeField] private static int life = 3;
     [SerializeField] private GameObject ContentWeapon;
     [SerializeField] private GameObject ActiveWeapon;
     
@@ -400,6 +400,10 @@ void Update()
         }
         else
         {
+            lives = 3;
+            life = 3;
+            puntuationMultiplier = 0;
+            puntuation = 0;
             SceneManager.LoadScene("GameOver");
         }
     }
@@ -430,8 +434,8 @@ void Update()
 
     private void updateVidas()
     {
-        
-       
+
+        Debug.Log(lives);
         switch (lives)
         {
             case 1:
