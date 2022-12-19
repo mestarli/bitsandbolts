@@ -65,6 +65,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject vidasUI;
     [SerializeField] private GameObject puntuacionUI;
     [SerializeField] private GameObject multiplicadorUI;
+    
+    public static Player  Instance { get; private set; }
     private void Awake()
     {
         rigidbody_ = GetComponent<Rigidbody2D>();
