@@ -39,8 +39,7 @@ public class Skeleton : Enemy
     {
         if (roam)
         {
-            rigidbody2D_.velocity = transform.right * speedRoam;
-            AudioManager.Instance.PlaySong("bote-calavera");
+            rigidbody2D_.velocity = new Vector2( transform.right.x * speedRoam, rigidbody2D_.velocity.y);
             animator.SetBool("HeadLess",true);
         }
     }

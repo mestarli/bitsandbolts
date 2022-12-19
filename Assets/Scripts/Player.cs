@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public Animator animator;
 
     public static int puntuation;
-    public static int puntuationMultiplier;
+    public static int puntuationMultiplier=1;
 
     public GameObject respawn;
     public bool respawning;
@@ -65,6 +65,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject vidasUI;
     [SerializeField] private GameObject puntuacionUI;
     [SerializeField] private GameObject multiplicadorUI;
+    
+    public static Player  Instance { get; private set; }
     private void Awake()
     {
         rigidbody_ = GetComponent<Rigidbody2D>();
@@ -103,12 +105,20 @@ public class Player : MonoBehaviour
         {
             Console.WriteLine(e);
         }
-          
 
+
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start(){
+        multiplicadorUI.GetComponent<TextMeshProUGUI>().text = puntuationMultiplier.ToString();
+        puntuacionUI.GetComponent<TextMeshProUGUI>().text = puntuation.ToString("0000000000000000");
+        UIGame.instance.UpdateLifeScenes(life);
+        updateVidas();
+
+    }
+// Update is called once per frame
+void Update()
     {
         if (respawning)
         {
@@ -367,9 +377,9 @@ public class Player : MonoBehaviour
                 }
                 rigidbody_.AddForce(transform.up * knockbackVerticalForce);
                 puntuationMultiplier -= 5;
-                if(puntuationMultiplier < 0)
+                if(puntuationMultiplier < 1)
                 {
-                    puntuationMultiplier = 0;
+                    puntuationMultiplier = 1;
                 }
                 multiplicadorUI.GetComponent<TextMeshProUGUI>().text = puntuationMultiplier.ToString();
             }
@@ -378,10 +388,11 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        AudioManager.Instance.PlaySong("muerte-player");
         if (lives > 0)
         {
             lives--;
-            vidasUI.transform.GetChild(life).gameObject.SetActive(false);
+            vidasUI.transform.GetChild(lives).gameObject.SetActive(false);
             life = 3;
             respawning = true;
             transform.position = respawn.transform.position;
@@ -415,5 +426,30 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
+    }
+
+    private void updateVidas()
+    {
+        
+       
+        switch (lives)
+        {
+            case 1:
+                vidasUI.transform.GetChild(0).gameObject.SetActive(true);
+                vidasUI.transform.GetChild(1).gameObject.SetActive(false);
+                vidasUI.transform.GetChild(2).gameObject.SetActive(false);
+                break;
+            case 2:
+                vidasUI.transform.GetChild(0).gameObject.SetActive(true);
+                vidasUI.transform.GetChild(1).gameObject.SetActive(true);
+                vidasUI.transform.GetChild(2).gameObject.SetActive(false);
+                break;
+            case 3:
+                vidasUI.transform.GetChild(0).gameObject.SetActive(true);
+                vidasUI.transform.GetChild(1).gameObject.SetActive(true);
+                vidasUI.transform.GetChild(2).gameObject.SetActive(true);
+                break;
+        }
+
     }
 }

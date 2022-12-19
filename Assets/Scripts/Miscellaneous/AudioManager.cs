@@ -30,6 +30,7 @@ public class AudioManager : MonoBehaviour
             sound.audioSource.clip = sound.audioClip;
 
             sound.audioSource.volume = sound.volume * volume;
+            sound.audioSource.pitch = sound.pitch;
             sound.audioSource.playOnAwake = sound.playOnAwake;
             sound.audioSource.loop = sound.loop;
         }
