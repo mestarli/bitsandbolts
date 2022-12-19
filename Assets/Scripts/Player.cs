@@ -383,7 +383,7 @@ public class Player : MonoBehaviour
         if (lives > 0)
         {
             lives--;
-            vidasUI.transform.GetChild(life).gameObject.SetActive(false);
+            vidasUI.transform.GetChild(lives).gameObject.SetActive(false);
             life = 3;
             respawning = true;
             transform.position = respawn.transform.position;
