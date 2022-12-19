@@ -3035,7 +3035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6190791500711649998
 Transform:
   m_ObjectHideFlags: 0
@@ -3077,7 +3077,6 @@ MonoBehaviour:
   pointToFire: {fileID: 6190791501232640586}
   fireBall: {fileID: 806421475187081500, guid: 0ac4ac29be8e97f48beefd197bb6e689, type: 3}
   fireWall: {fileID: 9076285093483467864, guid: 0852e13107faa5944aa7df8609bbf5cc, type: 3}
-  ActivateFinish: {fileID: 0}
 --- !u!50 &6190791500711649997
 Rigidbody2D:
   serializedVersion: 4
