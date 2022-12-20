@@ -20,11 +20,12 @@ public class Boss_01 : MonoBehaviour
     [SerializeField] private Transform pointToFire;
     [SerializeField] private GameObject fireBall;
     [SerializeField] private GameObject fireWall;
-
+    public int contadorFuegos = 0;
+    
     SpriteRenderer spriteRenderer;
     
     
-    private bool isAttacking = false;
+    public bool isAttacking = false;
     public virtual void Awake()
     {
         spriteRenderer = transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
@@ -46,8 +47,10 @@ public class Boss_01 : MonoBehaviour
     {
         if (!isAttacking)
         {
+            head_01.GetComponent<Animator>().ResetTrigger("NoAttack");
             StartCoroutine(Attack());
         }
+        
     }
     void FixedUpdate()
     {
@@ -93,29 +96,30 @@ public class Boss_01 : MonoBehaviour
     
     IEnumerator Attack()
     {
-        isAttacking = true;
-        int randomAttack = Random.Range(0, 10);
-        if(randomAttack < 7)
+        contadorFuegos++;
+        if (contadorFuegos == 1)
         {
-            fireAttack();
+            head_01.GetComponent<Animator>().SetTrigger("Attack");
         }
-        else
-        {
-            fireWallAttack();
-        }
+        
+       
         yield return new WaitForSeconds(4.5f);
+        contadorFuegos = 0;
         isAttacking = false;
     }
-    private void fireAttack()
+    public void fireAttack()
     {
-        GameObject fire = Instantiate(fireBall, pointToFire.position, Quaternion.identity);
+       
+        Instantiate(fireBall, pointToFire.position, Quaternion.identity);
+      
         //fire.transform.localPosition = Vector2.MoveTowards(transform.localPosition, playerReference.transform.position, speed * Time.deltaTime);
 
     }
     
-    private void fireWallAttack()
+    public void fireWallAttack()
     {
-        Vector3 positionWall = new Vector3(0.9274117f,64.35f,0f);
+       
+        Vector3 positionWall = new Vector3(2.899027f,147.0438f,0f);
         Instantiate(fireWall, positionWall, Quaternion.identity);
 
     }

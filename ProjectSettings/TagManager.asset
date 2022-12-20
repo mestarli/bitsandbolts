@@ -15,6 +15,7 @@ TagManager:
   - option_07
   - option_08
   - fire
+  - boss
   layers:
   - Default
   - TransparentFX
