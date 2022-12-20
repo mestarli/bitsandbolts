@@ -10,6 +10,8 @@ public class Sword : MonoBehaviour
         {
             Vector2 dir = transform.position - collision.transform.position;
             collision.GetComponent<Player>().TakeDamage(dir);
+
+            AudioManager.Instance.PlaySong("clavar-espada");
         }
     }
 }

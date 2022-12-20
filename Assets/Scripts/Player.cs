@@ -430,7 +430,7 @@ void Update()
         {
             Jump();
         }
-        if(collision.CompareTag("Boss"))
+        if(collision.CompareTag("boss"))
         { 
             Vector2 dir = transform.position - collision.transform.position;
             TakeDamage(dir);

@@ -1270,7 +1270,7 @@ MonoBehaviour:
     playOnAwake: 0
     loop: 0
     audioSource: {fileID: 0}
-  volume: 1
+  volume: 0.291
   function: 0
   mute: 0
   botonFunction: 

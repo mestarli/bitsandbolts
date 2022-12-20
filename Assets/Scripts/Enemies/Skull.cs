@@ -8,10 +8,12 @@ public class Skull : Enemy
     Vector2 direction;
     public float horizontalSpeed;
     public float verticalSpeed;
+    public Player player;
 
     public override void Awake()
     {
         base.Awake();
+        player = FindObjectOfType<Player>();
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         direction = -transform.right + transform.up;
     }
@@ -28,7 +30,12 @@ public class Skull : Enemy
     }
     void Jump()
     {
-        AudioManager.Instance.PlaySong("bote-calavera");
+        Vector2 dir = player.transform.position - transform.position;
+        if (dir.magnitude < 6)
+        {
+            Debug.Log(dir.magnitude);
+            AudioManager.Instance.PlaySong("bote-calavera");
+        }
         rigidbody2D_.velocity = new Vector2(0, 0);
         rigidbody2D_.AddForce(new Vector2(direction.normalized.x * horizontalSpeed, direction.normalized.y * verticalSpeed));
     }
@@ -37,7 +44,6 @@ public class Skull : Enemy
         base.OnTriggerEnter2D(collision);
         if (collision.gameObject.CompareTag("Floor"))
         {
-            AudioManager.Instance.PlaySong("bote-calavera");
             Jump();
         }
     }

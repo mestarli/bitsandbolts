@@ -94,9 +94,9 @@ public class Boss2 : Enemy
         sword.transform.parent = null;
         Vector3 pos = player.transform.position;
         Vector3 dir = pos - sword.transform.position;
+        AudioManager.Instance.PlaySong("lanzar-espada");
         while (dir.magnitude > 5f)
         {
-            Debug.Log(sword.GetComponent<Rigidbody2D>().velocity + " / " + dir.magnitude);
             sword.GetComponent<Rigidbody2D>().velocity = dir.normalized * speed; 
             dir = pos - sword.transform.position;
             yield return null;
@@ -123,12 +123,15 @@ public class Boss2 : Enemy
         sword.transform.parent = swordPoint.transform;
         sword.transform.localPosition = new Vector2(0, 0);
         sword.GetComponent<Rigidbody2D>().bodyType = UnityEngine.RigidbodyType2D.Kinematic;
+
+        AudioManager.Instance.PlaySong("coger-espada");
     }
 
     void SpawnBat()
     {
         GameObject spawner = batSpawners[Random.Range(0, batSpawners.Count - 1)];
         Instantiate(Bat, spawner.transform.position, spawner.transform.rotation);
+        AudioManager.Instance.PlaySong("grito2");
 
     }
 
