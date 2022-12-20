@@ -21,7 +21,7 @@ public class Skeleton : Enemy
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         try
         {
-            version = UI_Manager.Instance.SpiderVersion();
+            version = UI_Manager.Instance.SkeletonVersion();
         }
         catch (Exception e)
         {

@@ -18,7 +18,7 @@ public class Bat : Enemy
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         try
         {
-            version = UI_Manager.Instance.SpiderVersion();
+            version = UI_Manager.Instance.BatVersion();
         }
         catch (Exception e)
         {
