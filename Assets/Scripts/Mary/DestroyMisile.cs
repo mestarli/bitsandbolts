@@ -15,7 +15,6 @@ public class DestroyMisile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-
         if (collision.GetComponent<Player>())
         {
             Vector2 dir = transform.position - collision.transform.position;
@@ -30,10 +29,16 @@ public class DestroyMisile : MonoBehaviour
 
     IEnumerator destroyWall()
     {
+        yield return new WaitForSeconds(0.5f);
+        if (type_misile == 1)
+        {
+            Destroy(gameObject);
+        }
         yield return new WaitForSeconds(2.5f);
         if (type_misile == 2)
         {
             Destroy(gameObject);
         }
+       
     }
 }

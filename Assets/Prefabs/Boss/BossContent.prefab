@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 328836057}
   - component: {fileID: 328836059}
   - component: {fileID: 328836058}
+  - component: {fileID: 8500128291743144759}
+  - component: {fileID: 4906127492093585469}
   m_Layer: 6
   m_Name: Boss01_01 (8)
   m_TagString: Untagged
@@ -111,6 +113,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &8500128291743144759
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328836056}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &4906127492093585469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328836056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &355473722
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +158,8 @@ GameObject:
   - component: {fileID: 355473723}
   - component: {fileID: 355473725}
   - component: {fileID: 355473724}
+  - component: {fileID: 7261192261962259379}
+  - component: {fileID: 2313358413497114777}
   m_Layer: 6
   m_Name: Boss01_01 (7)
   m_TagString: Untagged
@@ -222,6 +260,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &7261192261962259379
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355473722}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &2313358413497114777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355473722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &588505430
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +305,8 @@ GameObject:
   - component: {fileID: 588505431}
   - component: {fileID: 588505433}
   - component: {fileID: 588505432}
+  - component: {fileID: 1995797362817852157}
+  - component: {fileID: 204451552948288321}
   m_Layer: 6
   m_Name: Boss01_01 (4)
   m_TagString: Untagged
@@ -333,6 +407,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &1995797362817852157
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588505430}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &204451552948288321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588505430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &605992759
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +452,8 @@ GameObject:
   - component: {fileID: 605992760}
   - component: {fileID: 605992762}
   - component: {fileID: 605992761}
+  - component: {fileID: 96846935017083505}
+  - component: {fileID: 5502231012409736604}
   m_Layer: 6
   m_Name: Boss01_01 (2)
   m_TagString: Untagged
@@ -444,6 +554,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &96846935017083505
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605992759}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &5502231012409736604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605992759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &765326150
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +599,8 @@ GameObject:
   - component: {fileID: 765326151}
   - component: {fileID: 765326153}
   - component: {fileID: 765326152}
+  - component: {fileID: 1000193631962364419}
+  - component: {fileID: 2374174180296200889}
   m_Layer: 6
   m_Name: Boss01_01 (9)
   m_TagString: Untagged
@@ -555,6 +701,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &1000193631962364419
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765326150}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &2374174180296200889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765326150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &878209939
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +746,8 @@ GameObject:
   - component: {fileID: 878209940}
   - component: {fileID: 878209942}
   - component: {fileID: 878209941}
+  - component: {fileID: 4673879438983482078}
+  - component: {fileID: 4775043405033700023}
   m_Layer: 6
   m_Name: Boss01_01 (13)
   m_TagString: Untagged
@@ -666,6 +848,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &4673879438983482078
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878209939}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &4775043405033700023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878209939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &914343367
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +893,8 @@ GameObject:
   - component: {fileID: 914343368}
   - component: {fileID: 914343370}
   - component: {fileID: 914343369}
+  - component: {fileID: 55266923426186131}
+  - component: {fileID: 3308242592022443037}
   m_Layer: 6
   m_Name: Boss01_01 (3)
   m_TagString: Untagged
@@ -777,6 +995,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &55266923426186131
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914343367}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &3308242592022443037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914343367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &960556882
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +1040,8 @@ GameObject:
   - component: {fileID: 960556883}
   - component: {fileID: 960556885}
   - component: {fileID: 960556884}
+  - component: {fileID: 5194782341578151213}
+  - component: {fileID: 6956556941840455346}
   m_Layer: 6
   m_Name: Boss01_01 (12)
   m_TagString: Untagged
@@ -888,6 +1142,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &5194782341578151213
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960556882}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &6956556941840455346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960556882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &992507449
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +1187,8 @@ GameObject:
   - component: {fileID: 992507450}
   - component: {fileID: 992507451}
   - component: {fileID: 992507452}
+  - component: {fileID: 2626294404532367506}
+  - component: {fileID: 6578104486290896932}
   m_Layer: 6
   m_Name: Boss01_01 (1)
   m_TagString: Untagged
@@ -917,7 +1207,8 @@ Transform:
   m_LocalPosition: {x: 0.6976, y: 0.4651, z: 0}
   m_LocalScale: {x: 3.9068, y: 3.9068, z: 3.9068}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4774432675566604905}
   m_Father: {fileID: 6190791500524453121}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -999,6 +1290,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24841398, y: 0.23250663}
   m_EdgeRadius: 0
+--- !u!50 &2626294404532367506
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992507449}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &6578104486290896932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992507449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &1066387744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1335,8 @@ GameObject:
   - component: {fileID: 1066387745}
   - component: {fileID: 1066387747}
   - component: {fileID: 1066387746}
+  - component: {fileID: 5388129617913025656}
+  - component: {fileID: 7672037085793512297}
   m_Layer: 6
   m_Name: Boss01_01 (6)
   m_TagString: Untagged
@@ -1110,6 +1437,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &5388129617913025656
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066387744}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &7672037085793512297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066387744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &1066874646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1482,8 @@ GameObject:
   - component: {fileID: 1066874647}
   - component: {fileID: 1066874649}
   - component: {fileID: 1066874648}
+  - component: {fileID: 6535908202021467606}
+  - component: {fileID: 4464095639607974408}
   m_Layer: 6
   m_Name: Boss01_01 (11)
   m_TagString: Untagged
@@ -1221,6 +1584,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &6535908202021467606
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066874646}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &4464095639607974408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066874646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &1258672940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,6 +1629,8 @@ GameObject:
   - component: {fileID: 1258672941}
   - component: {fileID: 1258672943}
   - component: {fileID: 1258672942}
+  - component: {fileID: 6298268799702388838}
+  - component: {fileID: 5591383646206296778}
   m_Layer: 6
   m_Name: Boss01_01 (14)
   m_TagString: Untagged
@@ -1332,6 +1731,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &6298268799702388838
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258672940}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &5591383646206296778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258672940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &1525555067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,6 +1776,8 @@ GameObject:
   - component: {fileID: 1525555068}
   - component: {fileID: 1525555070}
   - component: {fileID: 1525555069}
+  - component: {fileID: 6495052116554803116}
+  - component: {fileID: 9192034418051592341}
   m_Layer: 6
   m_Name: Boss01_01 (10)
   m_TagString: Untagged
@@ -1443,6 +1878,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &6495052116554803116
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525555067}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &9192034418051592341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525555067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &2110397012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1923,8 @@ GameObject:
   - component: {fileID: 2110397013}
   - component: {fileID: 2110397015}
   - component: {fileID: 2110397014}
+  - component: {fileID: 3768074012903954264}
+  - component: {fileID: 5739752963279296349}
   m_Layer: 6
   m_Name: Boss01_01 (5)
   m_TagString: Untagged
@@ -1554,6 +2025,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!50 &3768074012903954264
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110397012}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 4.02
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!114 &5739752963279296349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110397012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &528334398722184713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +2070,7 @@ GameObject:
   - component: {fileID: 8916100717448608823}
   - component: {fileID: 4823895546329561593}
   - component: {fileID: 7023418656832649874}
+  - component: {fileID: 5765667769770195535}
   m_Layer: 6
   m_Name: Boss01_01 (10)
   m_TagString: Untagged
@@ -1665,6 +2171,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &5765667769770195535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528334398722184713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &838486210564906907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,6 +2195,7 @@ GameObject:
   - component: {fileID: 4566039670688952242}
   - component: {fileID: 7298631338035432893}
   - component: {fileID: 7749002630445232682}
+  - component: {fileID: 2815120634051192748}
   m_Layer: 6
   m_Name: Boss01_01 (4)
   m_TagString: Untagged
@@ -1776,6 +2296,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &2815120634051192748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838486210564906907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &947316894553628270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,6 +2320,7 @@ GameObject:
   - component: {fileID: 9109289271835376297}
   - component: {fileID: 4998808123049973867}
   - component: {fileID: 7019118931510974092}
+  - component: {fileID: 2515520193684080267}
   m_Layer: 6
   m_Name: Boss01_01 (3)
   m_TagString: Untagged
@@ -1887,6 +2421,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &2515520193684080267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947316894553628270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &1641494426736099630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +2445,7 @@ GameObject:
   - component: {fileID: 7590140673422118222}
   - component: {fileID: 4786497911967292911}
   - component: {fileID: 8439836974331661140}
+  - component: {fileID: 5894883702950634837}
   m_Layer: 6
   m_Name: Boss01_01 (7)
   m_TagString: Untagged
@@ -1998,6 +2546,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &5894883702950634837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641494426736099630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &2532343322518101752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,6 +2636,7 @@ GameObject:
   - component: {fileID: 6318413767746068022}
   - component: {fileID: 5346887104601283358}
   - component: {fileID: 3529321245807514238}
+  - component: {fileID: 3780755806886448310}
   m_Layer: 6
   m_Name: Boss01_01 (9)
   m_TagString: Untagged
@@ -2175,6 +2737,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &3780755806886448310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3477363863797509523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &3870314980705661654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,6 +2761,7 @@ GameObject:
   - component: {fileID: 4440076950087313357}
   - component: {fileID: 3215075079342762311}
   - component: {fileID: 5885436283952952361}
+  - component: {fileID: 6129767768025490361}
   m_Layer: 6
   m_Name: Boss01_01 (5)
   m_TagString: Untagged
@@ -2286,6 +2862,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &6129767768025490361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3870314980705661654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &4254760252371437955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,6 +2886,7 @@ GameObject:
   - component: {fileID: 5783464328809032413}
   - component: {fileID: 6714331294787978122}
   - component: {fileID: 6148640866807586047}
+  - component: {fileID: 5265647699267793757}
   m_Layer: 6
   m_Name: Boss01_01 (8)
   m_TagString: Untagged
@@ -2397,6 +2987,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &5265647699267793757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254760252371437955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &4688456777502436740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,6 +3011,7 @@ GameObject:
   - component: {fileID: 2978233988675008911}
   - component: {fileID: 5501000153634163837}
   - component: {fileID: 963938213656539920}
+  - component: {fileID: 3021506998551709893}
   m_Layer: 6
   m_Name: Boss01_01 (13)
   m_TagString: Untagged
@@ -2508,6 +3112,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &3021506998551709893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4688456777502436740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &5204941960363430893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,6 +3136,7 @@ GameObject:
   - component: {fileID: 8049164391018008528}
   - component: {fileID: 2066544622991514785}
   - component: {fileID: 8763209737373255871}
+  - component: {fileID: 7306292273787390458}
   m_Layer: 6
   m_Name: Boss01_01 (11)
   m_TagString: Untagged
@@ -2619,6 +3237,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &7306292273787390458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5204941960363430893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &5593236169989803843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,6 +3261,7 @@ GameObject:
   - component: {fileID: 1744987465507681407}
   - component: {fileID: 8639738997209836735}
   - component: {fileID: 2006963708754091540}
+  - component: {fileID: 1875920587231000572}
   m_Layer: 6
   m_Name: Boss01_01 (14)
   m_TagString: Untagged
@@ -2730,6 +3362,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &1875920587231000572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593236169989803843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &5634024866020584908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,6 +3386,7 @@ GameObject:
   - component: {fileID: 7864713475107124227}
   - component: {fileID: 4691695507464545366}
   - component: {fileID: 1279357707395367897}
+  - component: {fileID: 849422606205061542}
   m_Layer: 6
   m_Name: Boss01_01 (1)
   m_TagString: Untagged
@@ -2841,6 +3487,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24841398, y: 0.23250663}
   m_EdgeRadius: 0
+--- !u!114 &849422606205061542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5634024866020584908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &5945962168662577651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,6 +3511,7 @@ GameObject:
   - component: {fileID: 5719577530787256662}
   - component: {fileID: 1980833699041381268}
   - component: {fileID: 5870704363650033171}
+  - component: {fileID: 1885036509838929919}
   m_Layer: 6
   m_Name: Boss01_01 (12)
   m_TagString: Untagged
@@ -2952,6 +3612,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &1885036509838929919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5945962168662577651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
 --- !u!1 &6190791500524453120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,6 +3635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6190791500524453121}
   - component: {fileID: 1263894349}
+  - component: {fileID: 6180336911978986580}
   m_Layer: 6
   m_Name: Boss01_01
   m_TagString: Untagged
@@ -3018,6 +3692,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6180336911978986580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190791500524453120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1181850c7e9f04f88b9401f2bd6cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss_01: {fileID: 6190791500711649999}
 --- !u!1 &6190791500711649993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,7 +3722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6190791500711649998
 Transform:
   m_ObjectHideFlags: 0
@@ -3050,7 +3737,6 @@ Transform:
   m_Children:
   - {fileID: 6190791500524453121}
   - {fileID: 4375130770087085285}
-  - {fileID: 6190791501232640586}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3074,9 +3760,11 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 6190791500711649997}
   speed: 0
   distance: 0
-  pointToFire: {fileID: 6190791501232640586}
+  pointToFire: {fileID: 4774432675566604905}
   fireBall: {fileID: 806421475187081500, guid: 0ac4ac29be8e97f48beefd197bb6e689, type: 3}
   fireWall: {fileID: 9076285093483467864, guid: 0852e13107faa5944aa7df8609bbf5cc, type: 3}
+  contadorFuegos: 0
+  isAttacking: 0
 --- !u!50 &6190791500711649997
 Rigidbody2D:
   serializedVersion: 4
@@ -3098,37 +3786,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!1 &6190791501232640693
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6190791501232640586}
-  m_Layer: 0
-  m_Name: PointToFire
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6190791501232640586
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190791501232640693}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.51, y: -0.44, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6190791500711649998}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6542447348839494888
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,6 +3797,7 @@ GameObject:
   - component: {fileID: 6131427758379212607}
   - component: {fileID: 101934490321396049}
   - component: {fileID: 1271225304458262977}
+  - component: {fileID: 1139180409166107353}
   m_Layer: 6
   m_Name: Boss01_01 (2)
   m_TagString: Untagged
@@ -3240,6 +3898,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &1139180409166107353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6542447348839494888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0
+--- !u!1 &6942140183859948805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4774432675566604905}
+  m_Layer: 0
+  m_Name: PointToFire_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4774432675566604905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942140183859948805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.21099998, y: -0.032, z: 0}
+  m_LocalScale: {x: 0.25596398, y: 0.25596398, z: 0.25596398}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 992507450}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8077413129826207399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,6 +3953,7 @@ GameObject:
   - component: {fileID: 2909382976979995134}
   - component: {fileID: 2249789831212211600}
   - component: {fileID: 6186359762212980689}
+  - component: {fileID: 5583018590933254352}
   m_Layer: 6
   m_Name: Boss01_01 (6)
   m_TagString: Untagged
@@ -3351,3 +4054,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17644739, y: 0.2441805}
   m_EdgeRadius: 0
+--- !u!114 &5583018590933254352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8077413129826207399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e53c39abc234d438cf0b2e743a4511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type_misile: 0

@@ -22,7 +22,7 @@ public class Phantom : Enemy
         rigidbody2D_ = GetComponent<Rigidbody2D>();
         try
         {
-            version = UI_Manager.Instance.SpiderVersion();
+            version = UI_Manager.Instance.PhantomVersion();
         }
         catch (Exception e)
         {

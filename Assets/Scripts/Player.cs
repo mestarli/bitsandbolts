@@ -430,6 +430,12 @@ void Update()
         {
             Jump();
         }
+        if(collision.CompareTag("Boss"))
+        { 
+            Vector2 dir = transform.position - collision.transform.position;
+            TakeDamage(dir);
+        }
+        
     }
 
     private void updateVidas()
